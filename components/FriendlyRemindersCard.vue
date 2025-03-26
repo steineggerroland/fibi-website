@@ -2,10 +2,10 @@
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
             <CardTitle border="bottom" border-width="4">
-                <Anchor text-decoration="none" href="/#friendlyReminders">Friendly Reminders</Anchor>
+                <Anchor text-decoration="none" href="/#friendlyReminders">{{ $t('card.friendly-reminders.title') }}</Anchor>
             </CardTitle>
             <CardText text-color="body-secondary">
-                “Are there any follow-up tasks for your last appointment?”
+                {{ $t('card.friendly-reminders.text') }}
             </CardText>
         </CardBody>
     </Card>

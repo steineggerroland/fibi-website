@@ -1,10 +1,10 @@
 <template>
   <b-div v-if="person === 'Fibi'" margin="b-2">
-    <Avatar circle size="xs" img-src="fibi.png" img-alt="Picture representing Fibi as a cute animal" /> Fibi
+    <Avatar circle size="xs" img-src="fibi.png" :img-alt="$t('general.avatar.fibi')" /> Fibi
   </b-div>
   <b-div v-else margin="b-2">
     {{ person }}
-    <Avatar circle size="xs" img-src="you.png" img-alt="A cute little sloth as a placeholder for your picture" />
+    <Avatar circle size="xs" img-src="you.png" :img-alt="$t('general.avatar.sloth')" />
   </b-div>
 </template>
 

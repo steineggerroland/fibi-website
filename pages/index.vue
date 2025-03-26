@@ -1,10 +1,14 @@
 <script setup lang="ts">
 definePageMeta({
-    layout: 'landing',
-    title: 'Fibi - Your companion',
-    description: 'Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.'
+    layout: 'landing'
 })
-const fibiProperties = ["Day-Planner", "Companion", "Reminder", "Assistant", "Task-Planner"]
+const {t} = useI18n()
+useSeoMeta({
+  title: t('page-title'),
+  ogTitle: t('page-title'),
+  description:  t('page-description'),
+  ogDescription: t('page-description')
+})
 const publicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEZ9VGKRYJKwYBBAHaRw8BAQdA4lAz9chDn0LLckGWMZvkZhL64Xro9Z1rqqNB
@@ -23,25 +27,25 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     <div class="hero">
         <HeroRow size="md-10 lg-8" margin="y-5">
             <Container>
-                <b-h level="1" line-height="0" class="display-3 mb-5">
+                <b-h level="1" line-height="0" class="display-4 mb-5">
                     <Avatar circle size="sm" img-src="fibi.png" img-alt="Picture representing Fibi as a cute animal" />
-                    Fibi:<br>Your Friendly <Typed class="text-primary" :strings="fibiProperties">
-                    </Typed><br><b-div padding="0" font-size="4">having Neurospicy Brains in mind</b-div>
+                    Fibi:<br>{{$t('index.fibi-properties.prefix')}} <br class="hideOnBig"/><Typed class="text-primary" :strings="[$t('index.fibi-properties.day-planner'), $t('index.fibi-properties.companion'), $t('index.fibi-properties.reminder'), $t('index.fibi-properties.companion'), $t('index.fibi-properties.assistant')]">
+                    </Typed><br><b-div padding="0" font-size="4">{{$t('index.hero.subtitle')}}</b-div>
                 </b-h>
                 <b-p class="mb-1" font-size="5">
                     <b-div flex flex-direction="row" position="relative">
-                        <b-div margin="e-3">Fibi ...</b-div>
+                        <b-div margin="e-3">{{ $t('index.hero.features.prefix-with-dots') }}</b-div>
                         <b-div>
                             <List unstyled>
-                                <ListItem><b-div visually-hidden>Fibi </b-div>reminds you to note tasks
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.reminds-you-to-note-tasks') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>Fibi </b-div>keeps track of your calendar
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.keeps-track-of-your-calendar') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>Fibi </b-div>helps you create small doable tasks
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.helps-you-create-small-doable-tasks') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>Fibi </b-div>uses your favorite messenger
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.uses-your-favorite-messenger') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>Fibi </b-div>understands everyday language
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.understands-everyday-language') }}
                                 </ListItem>
                             </List>
                         </b-div>
@@ -50,7 +54,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Container>
             <Container margin="y-2">
                 <Anchor href="/actions/startConversation"><b-button color="primary" size="lg" padding="y-3 x-5"
-                        font-weight="light" font-size="2">Start Chat</b-button></Anchor>
+                        font-weight="light" font-size="2">{{ $t('index.hero.start-chat') }}</b-button></Anchor>
             </Container>
         </HeroRow>
     </div>
@@ -86,11 +90,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     </Background>
     <Container margin="y-5">
         <Row text-alignment="center">
-            <h2 id="morningRoutine">Morning Routine</h2>
+            <h2 id="morningRoutine">{{ $t('index.morning-routine.title') }}</h2>
             <hr>
             <b-div font-size="5" margin="b-4">
-                Start the day with a warm good morning by Fibi. Plan the day with Fibi, go through appointments, block
-                time for tasks, …
+                {{ $t('index.morning-routine.teaser') }}
             </b-div>
         </Row>
         <Row>
@@ -99,16 +102,16 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Col>
             <Col>
             <List font-size="5">
-                <ListItem>Get up-to-date information (weather, appointments, …)</ListItem>
-                <ListItem>Walk through your planned routine (Breakfast ✅, Shower ✅, …)</ListItem>
-                <ListItem>Start the day with a well-prepared structure</ListItem>
+                <ListItem>{{ $t('index.morning-routine.get-up-to-date-information-weather-appointments') }}</ListItem>
+                <ListItem>{{ $t('index.morning-routine.walk-through-your-planned-routine-breakfast-shower') }}</ListItem>
+                <ListItem>{{ $t('index.morning-routine.start-the-day-with-a-well-prepared-structure') }}</ListItem>
             </List>
             <BBlockquoteFigure>
                 <BBlockquote>
-                    <b-p>I like to get an overview of the day in the morning and plan my to-dos.</b-p>
+                    <b-p>{{ $t('index.morning-routine.quote.roland-text') }}</b-p>
                 </BBlockquote>
                 <BBlockquoteFooter>
-                    Roland, Founder
+                    {{ $t('index.morning-routine.quote.roland-name') }}
                 </BBlockquoteFooter>
             </BBlockquoteFigure>
             </Col>
@@ -117,11 +120,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     <Background background-color="blue-100">
         <Container margin="y-5">
             <Row text-alignment="center">
-                <h2 id="taskCalendarSync">Task & Calendar Sync</h2>
+                <h2 id="taskCalendarSync">{{ $t('index.taskCalendarSync.title') }}</h2>
                 <hr>
                 <b-div font-size="5" margin="b-4">
-                    Highlights <em>special</em> appointments and helps preparation. Keep using your favorite app, e.g.,
-                    Trello, Wonderlist, Deck - Fibi integrates them.
+                    {{ $t('index.taskCalendarSync.teaser') }}
                 </b-div>
             </Row>
             <Row>
@@ -130,17 +132,17 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </Col>
                 <Col>
                 <List font-size="5">
-                    <ListItem>Fibi looks for unusual events</ListItem>
-                    <ListItem>Get answers to: "When is my next doctor appointment"</ListItem>
-                    <ListItem>Block time slots for tasks</ListItem>
-                    <ListItem>Split big tasks with help by fibi</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.fibi-looks-for-unusual-events') }}</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.get-answers-to-when-is-my-next-doctor-appointment') }}</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.block-time-slots-for-tasks') }}</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.split-big-tasks-with-help-by-fibi') }}</ListItem>
                 </List>
                 <BBlockquoteFigure>
                     <BBlockquote>
-                        <b-p>I often got "surprised" by doctor appointents and other less regular events</b-p>
+                        <b-p>{{ $t('index.taskCalendarSync.quote.roland-text') }}</b-p>
                     </BBlockquote>
                     <BBlockquoteFooter>
-                        Roland, Founder
+                        {{ $t('index.taskCalendarSync.quote.roland-name') }}
                     </BBlockquoteFooter>
                 </BBlockquoteFigure>
                 </Col>
@@ -149,10 +151,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     </Background>
     <Container margin="y-5">
         <Row text-alignment="center">
-            <h2 id="positiveNudges">Positive Nudges</h2>
+            <h2 id="positiveNudges">{{ $t('index.positive-nudges.title') }}</h2>
             <hr>
             <b-div font-size="5" margin="b-4">
-                Trouble with starting tasks? Have you tried task lists, bullet journals, apps, cards, ...?
+                {{ $t('index.positive-nudges.teaser') }}
             </b-div>
         </Row>
         <Row>
@@ -161,17 +163,17 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Col>
             <Col>
             <List font-size="5">
-                <ListItem>Fibi is your safe space</ListItem>
-                <ListItem>Reminding you without being pushy</ListItem>
-                <ListItem>Gives ideas how to start small</ListItem>
-                <ListItem>Knows your calendar and when there is time</ListItem>
+                <ListItem>{{ $t('index.positive-nudges.fibi-is-your-safe-space') }}</ListItem>
+                <ListItem>{{ $t('index.positive-nudges.reminding-you-without-being-pushy') }}</ListItem>
+                <ListItem>{{ $t('index.positive-nudges.gives-ideas-how-to-start-small') }}</ListItem>
+                <ListItem>{{ $t('index.positive-nudges.knows-your-calendar-and-when-there-is-time') }}</ListItem>
             </List>
             <BBlockquoteFigure>
                 <BBlockquote>
-                    <b-p>I tried a lot of tools to organize my days but lost focus quickly.</b-p>
+                    <b-p>{{ $t('index.positive-nudges.quote.roland-text') }}</b-p>
                 </BBlockquote>
                 <BBlockquoteFooter>
-                    Roland, Founder
+                    {{ $t('index.positive-nudges.quote.roland-name') }}
                 </BBlockquoteFooter>
             </BBlockquoteFigure>
             </Col>
@@ -180,11 +182,11 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     <Background background-color="blue-100">
         <Container margin="y-5">
             <Row text-alignment="center">
-                <h2 id="friendlyReminders">Friendly Reminders</h2>
+                <h2 id="friendlyReminders">{{ $t('index.friendly-reminders.title') }}</h2>
                 <hr>
                 <b-div font-size="5" margin="b-4">
-                    Do you have to handle a bunch of stuff and feel lost?<br>
-                    School, Kindergarten, Sport Clubs, Friends, ...
+                    {{ $t('index.friendly-reminders.teaser-first-line') }}<br>
+                    {{ $t('index.friendly-reminders.teaser-second-line') }}
                 </b-div>
             </Row>
             <Row>
@@ -193,17 +195,15 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </Col>
                 <Col>
                 <List font-size="5">
-                    <ListItem>Tell Fibi to remind you about tasks/events after picking up your children</ListItem>
-                    <ListItem>Set reminders for any doctor appointment:<br>"Remind me about doctor events 2 day in
-                        advance."</ListItem>
+                    <ListItem>{{ $t('index.friendly-reminders.tell-fibi-to-remind-you-about-tasks-events-after-picking-up-your-children') }}</ListItem>
+                    <ListItem>{{ $t('index.friendly-reminders.set-reminders-for-any-doctor-appointment') }}<br>{{ $t('index.friendly-reminders.remind-me-about-doctor-events-2-day-in-advance') }}</ListItem>
                 </List>
                 <BBlockquoteFigure>
                     <BBlockquote>
-                        <b-p>I missed a lot of deadlines, did not particpate in events with my children and had trouble
-                            keeping track of things.</b-p>
+                        <b-p>{{ $t('index.friendly-reminders.quote.roland-text') }}</b-p>
                     </BBlockquote>
                     <BBlockquoteFooter>
-                        Roland, Founder
+                        {{ $t('index.friendly-reminders.quote.roland-name') }}
                     </BBlockquoteFooter>
                 </BBlockquoteFigure>
                 </Col>
@@ -211,38 +211,37 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         </Container>
     </Background>
     <Container margin="y-5" flex-direction="column" style="max-width: 768px;">
-        <b-h level="2" font-size="1" margin="b-4">Ready for less overwhelm?</b-h>
+        <b-h level="2" font-size="1" margin="b-4">{{ $t('index.early-access.title') }}</b-h>
         <b-p>
-            Fibi is searching for active feedback. You can be part of the Beta. Requirements:
+            {{ $t('index.early-access.teaser') }}
             <List>
-                <ListItem>Fibi uses just signal messenger right now</ListItem>
-                <ListItem>You are willing to give me feedback on your experience with Fibi</ListItem>
-                <ListItem>You are willing to actively use Fibi</ListItem>
+                <ListItem>{{ $t('index.early-access.fibi-uses-just-signal-messenger-right-now') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.you-are-willing-to-give-me-feedback-on-your-experience-with-fibi') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.you-are-willing-to-actively-use-fibi') }}</ListItem>
             </List>
         </b-p>
         <b-p>
-            <Anchor href="actions/joinBeta"><b-button color="primary" size="lg">Get Early Access</b-button></Anchor>
+            <Anchor href="actions/joinBeta"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></Anchor>
         </b-p>
         <b-p>
-            <Anchor href="#about">Want to know more on Fibi's and their creatores background?</Anchor>
+            <Anchor href="#about">{{ $t('index.early-access.further-information') }}</Anchor>
         </b-p>
     </Container>
     <Background background-color="blue-100">
         <Container margin="y-5" style="max-width: 768px;">
-            <b-h level="2" id="contact-form">Contact</b-h>
+            <b-h level="2" id="contact-form">{{ $t('index.contact.title') }}</b-h>
             <ContactForm></ContactForm>
         </Container>
     </Background>
     <Container margin="y-5" style="max-width: 768px;">
         <b-h id="encryptedMail" level="2">
-            Secure Contact
+            {{ $t('index.secure-contact.title') }}
         </b-h>
         <b-p>
-            <b-p>Email communication is not secure by design, thus, if you want to send a real secure mail, you can
-                use my Public PGP Key (roland@steinegger.one). PGP encryption ensures, that just I can read the
-                mail. Software like <Anchor target="_blank"
-                    href="https://support.mozilla.org/de/kb/openpgp-in-thunderbird-leitfaden-und-faqs">Thunderbird
-                </Anchor> supports secure mails easily.</b-p>
+            <b-p>{{ $t('index.secure-contact.teaser') }} {{ $t('index.secure-contact.teaser-software-like-thunderbird-supports-secure-mails-pre') }} <Anchor
+                    href="https://support.mozilla.org/de/kb/openpgp-in-thunderbird-leitfaden-und-faqs" external>
+                    Thunderbird
+                </Anchor> {{ $t('index.secure-contact.teaser-software-like-thunderbird-supports-secure-mails-post') }}</b-p>
             <Accordion parent>
                 <AccordionSection title="Public Key">
                     <UseClipboard v-slot="{ copy, copied }" :source="publicKey">
@@ -270,27 +269,17 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     </Container>
     <Background background-color="blue-100">
         <Container margin="y-5" style="max-width: 768px;" id="about">
-            <b-h level="2">Background on Fibi and their creators</b-h>
+            <b-h level="2">{{ $t('index.background.title') }}</b-h>
             <b-p>
                 <Accordion parent>
-                    <AccordionSection title="Who am I? Why Fibi?" :active="true">
+                    <AccordionSection :title=" $t('index.background.tab.who-am-i-why-fibi.title') " :active="true">
                         <b-p>
-                            Hello, I’m Roland—a software developer with autism who’s always struggled to stay organized.
-                            I dreamed of a personal helper who could nudge me gently, remind me of tasks, and keep
-                            everything in one place.
-                            Once large language models emerged, it finally felt possible to bring “Fibi” to life!
+                            {{ $t('index.background.tab.who-am-i-why-fibi.text') }}
                         </b-p>
                     </AccordionSection>
-                    <AccordionSection title="Ongoing journey of Fibi">
+                    <AccordionSection :title=" $t('index.background.tab.ongoing-journey-of-fibi.title') ">
                         <b-p>
-                            The ongoing journey of Fibi
-                            Fibi already supports tasks, calendar syncing (CalDAV/ICS), reminders, timers, and even a
-                            morning routine feature.
-                            But there’s more I’d love to improve. I’m currently running a smaller language model locally
-                            for privacy,
-                            and new hardware would help me scale while keeping your data secure and private.
-                            That’s why I’m seeking funding—to build a more robust system and add the advanced features
-                            our community needs, all without handing any personal data to third parties.
+                            {{ $t('index.background.tab.ongoing-journey-of-fibi.text') }}
                         </b-p>
                     </AccordionSection>
                 </Accordion>
@@ -301,7 +290,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <Container margin="y-5">
             <Row>
                 <Col>
-                <b-h level="2">Legal notice</b-h>
+                <b-h level="2">{{ $t('legal-notice.title') }}</b-h>
                 <b-p>
                     Roland Steinegger<br>
                     Koppoldstr. 1<br>
@@ -310,8 +299,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </b-p>
                 </Col>
                 <Col>
-                <b-h level="3">Contact</b-h>
-                <b-h level="4">Editorial Responsibility</b-h>
+                <b-h level="3">{{ $t('legal-notice.contact.title') }}</b-h>
+                <b-h level="4">{{ $t('legal-notice.contact.editorial-responsibility.title') }}</b-h>
                 <b-p>
                     <br>
                     Roland Steinegger<br>
@@ -324,7 +313,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Row>
             <Row>
                 <b-p id="featuresThatNeedFunding">
-                    * These are features I'd love to implement, but that are complex and need funding.
+                    {{ $t('index.footnote.these-are-features-id-love-to-implement-but-that-are-complex-and-need-funding') }}
                 </b-p>
             </Row>
         </Container>
@@ -346,5 +335,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     background-repeat: no-repeat;
     background-position: right;
     background-image: url("../assets/hero_background.png");
+}
+@media (min-width:1562px) {
+.hideOnBig {
+    display: none;
+}
 }
 </style>

@@ -1,21 +1,21 @@
 <template>
     <Card>
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Chat Example</CardTitle>
+            <CardTitle border="bottom" border-width="4">{{ $t('chat-example.title') }}</CardTitle>
             <CardText>
                 <ChatMessages author="Fibi">
                     <ChatBubble background-color="purple-100">
-                        Kai's birthday is upcoming. Is there something we could prepare for it?
+                        {{ $t('chat-example.task-calendar-sync.1-fibi') }}
                     </ChatBubble>
                 </ChatMessages>
-                <ChatMessages author="You">
+                <ChatMessages :author="$t('chat-example.you')">
                     <ChatBubble background-color="yellow-100">
-                        Oh, thanks for reminding me!<br>I need a present.
+                        {{ $t('chat-example.task-calendar-sync.2-you') }}<br>{{ $t('chat-example.task-calendar-sync.3-you') }}
                     </ChatBubble>
                 </ChatMessages>
                 <ChatMessages author="Fibi">
                     <ChatBubble background-color="purple-100">
-                        Should I add a task for this and block some time? Do you need help choosing a gift?
+                        {{ $t('chat-example.task-calendar-sync.4-fibi') }}
                     </ChatBubble>
                 </ChatMessages>
             </CardText>

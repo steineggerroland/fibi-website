@@ -2,10 +2,10 @@
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
             <CardTitle border="bottom" border-width="4">
-                <Anchor text-decoration="none" href="/#taskCalendarSync">Task & Calendar Sync</Anchor>
+                <Anchor text-decoration="none" href="/#taskCalendarSync">{{ $t('card.task-calendar-sync.title') }}</Anchor>
             </CardTitle>
             <CardText text-color="body-secondary">
-                Keep track of everything in one place
+                {{ $t('card.task-calendar-sync.text') }}
             </CardText>
         </CardBody>
     </Card>

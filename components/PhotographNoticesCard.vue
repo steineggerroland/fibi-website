@@ -1,11 +1,11 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Photograph notices<Anchor href="#featuresThatNeedFunding">*
+            <CardTitle border="bottom" border-width="4">{{ $t('card.photograph-notices.title') }}<Anchor href="#featuresThatNeedFunding">*
                 </Anchor>
             </CardTitle>
             <CardText text-color="body-secondary">
-                Extracts tasks and appointments from notices by school, kindergarten etc.
+                {{ $t('card.photograph-notices.text') }}
             </CardText>
         </CardBody>
     </Card>

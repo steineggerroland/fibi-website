@@ -1,10 +1,10 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Scan Emails for to-dos<Anchor href="#featuresThatNeedFunding">*</Anchor>
+            <CardTitle border="bottom" border-width="4">{{ $t('card.scan-emails.title') }}<Anchor href="#featuresThatNeedFunding">*</Anchor>
             </CardTitle>
             <CardText text-color="body-secondary">
-                Extract tasks and appointments from your mails
+                {{ $t('card.scan-emails.text') }}
             </CardText>
         </CardBody>
     </Card>

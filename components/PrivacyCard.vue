@@ -1,9 +1,9 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Privacy In Mind</CardTitle>
+            <CardTitle border="bottom" border-width="4">{{ $t('card.privacy.title') }}</CardTitle>
             <CardText text-color="body-secondary">
-                No data is sent to third parties
+                {{ $t('card.privacy.text') }}
             </CardText>
         </CardBody>
     </Card>

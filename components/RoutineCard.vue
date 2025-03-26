@@ -1,9 +1,9 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Other Routines</CardTitle>
+            <CardTitle border="bottom" border-width="4">{{ $t('card.other-routines.title') }}</CardTitle>
             <CardText text-color="body-secondary">
-                Build new routines and get nudged
+                {{ $t('card.other-routines.text') }}
             </CardText>
         </CardBody>
     </Card>

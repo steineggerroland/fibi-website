@@ -1,17 +1,16 @@
 <template>
     <Card>
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Chat Example</CardTitle>
+            <CardTitle border="bottom" border-width="4">{{ $t('chat-example.title') }}</CardTitle>
             <CardText>
                 <ChatMessages author="Fibi">
-                    <ChatBubble background-color="purple-100">Good morning!
-                        🌅 Welcome to another sunny day. How are you feeling?<br>
-                        Let's start the morning routine gently.
+                    <ChatBubble background-color="purple-100">{{ $t('chat-example.morning-routine.1-fibi') }}<br>
+                        {{ $t('chat-example.morning-routine.2-fibi') }}
                     </ChatBubble>
                 </ChatMessages>
-                <ChatMessages author="You">
+                <ChatMessages :author="$t('chat-example.you')">
                     <ChatBubble background-color="yellow-100">
-                        Good morning! Do I have any important meetings?
+                        {{ $t('chat-example.morning-routine.3-you') }}
                     </ChatBubble>
                 </ChatMessages>
             </CardText>

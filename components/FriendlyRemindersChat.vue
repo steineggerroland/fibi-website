@@ -1,25 +1,25 @@
 <template>
     <Card>
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Chat Example</CardTitle>
+            <CardTitle border="bottom" border-width="4">{{ $t('chat-example.title') }}</CardTitle>
             <CardText>
-                <ChatMessages author="You">
+                <ChatMessages :author="$t('chat-example.you')">
                     <ChatBubble background-color="yellow-100">
-                        Remind me to add tasks and appointments after I pick up Jane from Kindergarten.
+                        {{ $t('chat-example.friendly-reminders.1-you') }}
                     </ChatBubble>
                 </ChatMessages>
                 <ChatMessages author="Fibi">
                     <ChatBubble background-color="purple-100">
-                        <em>Added appointment reminder</em>
+                        <em>{{ $t('chat-example.friendly-reminders.2-fibi') }}</em>
                     </ChatBubble>
                     <ChatBubble background-color="purple-100">
-                        I added the reminder for Jane's pickup appointmentments
+                        {{ $t('chat-example.friendly-reminders.3-fibi') }}
                     </ChatBubble>
                 </ChatMessages>
-                <b-p text-alignment="start" data-aos="fade-right">...Pickup appointment is over...</b-p>
+                <b-p text-alignment="start" data-aos="fade-right">{{ $t('chat-example.friendly-reminders.4-you') }}</b-p>
                 <ChatMessages author="Fibi">
                     <ChatBubble background-color="purple-100">
-                        You just picked up Jane from kindergarten. Are there any new tasks or appointments?
+                        {{ $t('chat-example.friendly-reminders.5-you') }}
                     </ChatBubble>
                 </ChatMessages>
             </CardText>

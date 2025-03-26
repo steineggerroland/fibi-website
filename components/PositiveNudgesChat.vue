@@ -1,24 +1,24 @@
 <template>
     <Card>
         <CardBody>
-            <CardTitle border="bottom" border-width="4">Chat Example</CardTitle>
+            <CardTitle border="bottom" border-width="4">{{ $t('chat-example.title') }}</CardTitle>
             <CardText>
                 <ChatMessages author="Fibi">
                     <ChatBubble background-color="purple-100">
-                        It's been a while since your last yoga session. How about a time slot for tomorrow?
+                        {{ $t('chat-example.positive-nudges.1-fibi') }}
                     </ChatBubble>
                 </ChatMessages>
-                <ChatMessages author="You">
+                <ChatMessages :author="$t('chat-example.you')">
                     <ChatBubble background-color="yellow-100">
-                        That sounds great. I just had a lot to do lately and forgot about it
+                        {{ $t('chat-example.positive-nudges.2-you') }}
                     </ChatBubble>
                 </ChatMessages>
                 <ChatMessages author="Fibi">
                     <ChatBubble background-color="purple-100">
-                        <em>Added appointment "Yoga"</em>
+                        <em>{{ $t('chat-example.positive-nudges.3-fibi') }}</em>
                     </ChatBubble>
                     <ChatBubble background-color="purple-100">
-                        Don't worry! That'll be a great new start tomorrow. I just reserved a free time slot.
+                        {{ $t('chat-example.positive-nudges.4-fibi') }}
                     </ChatBubble>
                 </ChatMessages>
             </CardText>

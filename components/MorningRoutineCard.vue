@@ -2,10 +2,10 @@
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
             <CardTitle border="bottom" border-width="4">
-                <Anchor text-decoration="none" href="/#morningRoutine">Morning Routine</Anchor>
+                <Anchor text-decoration="none" href="/#morningRoutine">{{ $t('card.morning-routine.title') }}</Anchor>
             </CardTitle>
             <CardText text-color="body-secondary">
-                Wake up gently with a quick daily overview
+                {{ $t('card.morning-routine.text') }}
             </CardText>
         </CardBody>
     </Card>

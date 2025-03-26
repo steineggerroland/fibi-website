@@ -3,39 +3,40 @@
     <b-p>
       <Alert color="warning" flex align-items="center">
         <BIcon icon="bi:exclamation-triangle-fill" flex="shrink-0" margin="e-2" aria-label="Warning:" />
-        <div>Don't send personal information using the form. The data is processed by <Anchor
-            href="https://formspree.io/legal/privacy-policy/">formspree.io</Anchor>.</div>
+        <div>{{ $t('contact-form.privacy-notice') }} <Anchor
+            href="https://formspree.io" external>formspree.io</Anchor>.</div>
       </Alert>
     </b-p>
     <b-p>
       <BFormLabel for="contactEmail">
-        Email:
+        {{ $t('contact-form.email-label') }}
       </BFormLabel>
-      <BFormInput id="contactEmail" type="email" name="email" placeholder="you@example.com" required size="lg"
+      <BFormInput id="contactEmail" type="email" name="email" :placeholder="$t('contact-form.email-placeholder')+'@example.com'" required size="lg"
         :model-value="contactFormInput.email" />
     </b-p>
     <b-p>
       <BFormLabel for="contactMessage">
-        What can we help you with?
+        {{ $t('contact-form.message-label') }}
       </BFormLabel>
-      <BFormTextarea id="contactMessage" type="email" name="message" placeholder="Hi Fibi Team, ..." rows="8" size="lg"
+      <BFormTextarea id="contactMessage" type="email" name="message" :placeholder="$t('contact-form.message-placeholder')" rows="8" size="lg"
         required :model-value="contactFormInput.message" />
     </b-p>
     <b-p>
       <BFormCheck>
         <BFormCheckInput required />
-        <BFormCheckLabel>I accept that my data is processed by <Anchor
-            href="https://formspree.io/legal/privacy-policy/">https://formspree.io/</Anchor>.
+        <BFormCheckLabel>{{ $t('contact-form.accept-processed-by-label') }} <Anchor
+            href="https://formspree.io/legal/privacy-policy/" external>formspree.io</Anchor>.
         </BFormCheckLabel>
       </BFormCheck>
     </b-p>
     <b-p>
-      <b-button color="primary" type="submit" padding="x-5">Send</b-button>
+      <b-button color="primary" type="submit" padding="x-5">{{ $t('contact-form.submit') }}</b-button>
     </b-p>
   </form>
 </template>
 
 <script lang="ts" setup>
+const {t} = useI18n()
 const route = useRoute()
 const contactFormInput = ref({
   email: "",
@@ -43,10 +44,10 @@ const contactFormInput = ref({
 })
 onBeforeMount(() => {
   if (!!route.query['startConversation']) {
-    contactFormInput.value.message = 'Hi Fibi-Team,\n\nI am interested in using Fibi.\nMy name is: <Your Name>\nFibi can support me to <Why do you want to use Fibi?>\n\nKind regards'
+    contactFormInput.value.message = t('contact-form.start-conversation-template')
   }
   if (!!route.query['joinBeta']) {
-    contactFormInput.value.message = 'Hi Fibi-Team,\n\nI am interested in joining the beta.\nMy name is: <Your Name>\nFibi can support me to <Why do you want to use Fibi?>\nI am willing to give feedback to improve Fibi.\n\nKind regards'
+    contactFormInput.value.message = t('contact-form.join-beta-template')
   }
 })
 </script>

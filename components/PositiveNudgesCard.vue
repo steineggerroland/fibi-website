@@ -1,9 +1,9 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle border="bottom" border-width="4"><Anchor text-decoration="none" href="/#positiveNudges">Positive Nudges</Anchor></CardTitle>
+            <CardTitle border="bottom" border-width="4"><Anchor text-decoration="none" href="/#positiveNudges">{{ $t('card.positive-nudges.title') }}</Anchor></CardTitle>
             <CardText text-color="body-secondary">
-                Get small encouragements to reduce overwhelm
+                {{ $t('card.positive-nudges.text') }}
             </CardText>
         </CardBody>
     </Card>
