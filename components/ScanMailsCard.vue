@@ -1,12 +1,10 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle>Scan Emails for to-dos<Anchor href="#featuresThatNeedFunding">*</Anchor>
+            <CardTitle border="bottom" border-width="4">Scan Emails for to-dos<Anchor href="#featuresThatNeedFunding">*</Anchor>
             </CardTitle>
-            <CardSubTitle margin="b-3" text-color="body-secondary" border="bottom" border-width="4">
+            <CardText text-color="body-secondary">
                 Extract tasks and appointments from your mails
-            </CardSubTitle>
-            <CardText>
             </CardText>
         </CardBody>
     </Card>

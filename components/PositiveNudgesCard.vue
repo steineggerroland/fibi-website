@@ -1,11 +1,9 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle><Anchor href="/#positiveNudges">Positive Nudges</Anchor></CardTitle>
-            <CardSubTitle margin="b-3" text-color="body-secondary" border="bottom" border-width="4">
+            <CardTitle border="bottom" border-width="4"><Anchor text-decoration="none" href="/#positiveNudges">Positive Nudges</Anchor></CardTitle>
+            <CardText text-color="body-secondary">
                 Get small encouragements to reduce overwhelm
-            </CardSubTitle>
-            <CardText>
             </CardText>
         </CardBody>
     </Card>

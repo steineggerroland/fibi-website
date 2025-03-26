@@ -1,11 +1,11 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle><Anchor href="/#friendlyReminders">Friendly Reminders</Anchor></CardTitle>
-            <CardSubTitle margin="b-3" text-color="body-secondary" border="bottom" border-width="4">
+            <CardTitle border="bottom" border-width="4">
+                <Anchor text-decoration="none" href="/#friendlyReminders">Friendly Reminders</Anchor>
+            </CardTitle>
+            <CardText text-color="body-secondary">
                 “Are there any follow-up tasks for your last appointment?”
-            </CardSubTitle>
-            <CardText>
             </CardText>
         </CardBody>
     </Card>

@@ -1,13 +1,11 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle>
-                <Anchor href="/#taskCalendarSync">Task & Calendar Sync</Anchor>
+            <CardTitle border="bottom" border-width="4">
+                <Anchor text-decoration="none" href="/#taskCalendarSync">Task & Calendar Sync</Anchor>
             </CardTitle>
-            <CardSubTitle margin="b-3" text-color="body-secondary" border="bottom" border-width="4">
+            <CardText text-color="body-secondary">
                 Keep track of everything in one place
-            </CardSubTitle>
-            <CardText>
             </CardText>
         </CardBody>
     </Card>
