@@ -9,6 +9,7 @@ useSeoMeta({
   description:  t('page-description'),
   ogDescription: t('page-description')
 })
+
 const publicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEZ9VGKRYJKwYBBAHaRw8BAQdA4lAz9chDn0LLckGWMZvkZhL64Xro9Z1rqqNB
@@ -58,7 +59,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Container>
         </HeroRow>
     </div>
-    <Background background-color="blue-100" margin="y-5">
+    <Background background-color="info-subtle" margin="y-5">
         <Container margin="y-5">
             <Row columns="1 sm-2 lg-3 xl-4" gutter="5">
                 <Col>
@@ -98,7 +99,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         </Row>
         <Row>
             <Col>
-            <MorningRoutineChat background-color="blue-100"></MorningRoutineChat>
+            <MorningRoutineChat background-color="info-subtle"></MorningRoutineChat>
             </Col>
             <Col>
             <List font-size="5">
@@ -117,7 +118,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Col>
         </Row>
     </Container>
-    <Background background-color="blue-100">
+    <Background background-color="info-subtle">
         <Container margin="y-5">
             <Row text-alignment="center">
                 <h2 id="taskCalendarSync">{{ $t('index.taskCalendarSync.title') }}</h2>
@@ -159,7 +160,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         </Row>
         <Row>
             <Col>
-            <PositiveNudgesChat background-color="blue-100"></PositiveNudgesChat>
+            <PositiveNudgesChat background-color="info-subtle"></PositiveNudgesChat>
             </Col>
             <Col>
             <List font-size="5">
@@ -179,7 +180,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Col>
         </Row>
     </Container>
-    <Background background-color="blue-100">
+    <Background background-color="info-subtle">
         <Container margin="y-5">
             <Row text-alignment="center">
                 <h2 id="friendlyReminders">{{ $t('index.friendly-reminders.title') }}</h2>
@@ -221,13 +222,22 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </List>
         </b-p>
         <b-p>
+            {{ $t('index.early-access.benefits.title') }}
+            <List>
+                <ListItem>{{ $t('index.early-access.benefits.a-companion-who-suppots-you') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.benefits.at-least-2-years-free-access') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.benefits.shape-fibi-your-feedback-leads-to-features-you-need') }}</ListItem>
+                <ListItem><em>{{ $t('index.early-access.benefits.lifetime-access-for-significant-support') }}</em></ListItem>
+            </List>
+        </b-p>
+        <b-p>
             <Anchor href="actions/joinBeta"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></Anchor>
         </b-p>
         <b-p>
             <Anchor href="#about">{{ $t('index.early-access.further-information') }}</Anchor>
         </b-p>
     </Container>
-    <Background background-color="blue-100">
+    <Background background-color="info-subtle">
         <Container margin="y-5" style="max-width: 768px;">
             <b-h level="2" id="contact-form">{{ $t('index.contact.title') }}</b-h>
             <ContactForm></ContactForm>
@@ -267,7 +277,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Accordion>
         </b-p>
     </Container>
-    <Background background-color="blue-100">
+    <Background background-color="info-subtle">
         <Container margin="y-5" style="max-width: 768px;" id="about">
             <b-h level="2">{{ $t('index.background.title') }}</b-h>
             <b-p>
@@ -318,7 +328,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </Row>
         </Container>
     </Background>
-    <Background background-color="light">
+    <Background background-color="dark-subtle">
         <Container text-alignment="center">
             © 2025 Roland Steinegger
         </Container>

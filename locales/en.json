@@ -112,5 +112,10 @@
   "chat-example.task-calendar-sync.1-fibi": "Kai's birthday is upcoming. Is there something we could prepare for it?",
   "chat-example.task-calendar-sync.2-you": "Oh, thanks for reminding me!",
   "chat-example.task-calendar-sync.3-you": "I need a present.",
-  "chat-example.task-calendar-sync.4-fibi": "Should I add a task for this and block some time? Do you need help choosing a gift?"
+  "chat-example.task-calendar-sync.4-fibi": "Should I add a task for this and block some time? Do you need help choosing a gift?",
+  "index.early-access.benefits.title": "Your benefits:",
+  "index.early-access.benefits.a-companion-who-suppots-you": "A companion who suppots you",
+  "index.early-access.benefits.at-least-2-years-free-access": "At least 2 years free access",
+  "index.early-access.benefits.shape-fibi-your-feedback-leads-to-features-you-need": "Shape Fibi - your feedback leads to features you need",
+  "index.early-access.benefits.lifetime-access-for-significant-support": "Lifetime access for significant support"
 }
