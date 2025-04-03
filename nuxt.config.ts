@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-25',
   devtools: { enabled: true },
-  site: { url: 'neurospicy.icu' },
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
@@ -10,8 +9,13 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/mdc',
     'usebootstrap',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/sitemap'
   ],
+  site: {
+    url: 'https://neurospicy.icu',
+    name: 'Fibi - Your Friendly Companion',
+  },
   i18n: {
     locales: [
       {
@@ -31,7 +35,10 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: '../locales/',
     defaultLocale: 'de',
-    vueI18n: '../i18n.config.ts'
+    vueI18n: '../i18n.config.ts',
+    bundle: {
+      optimizeTranslationDirective: false,
+    }
   },
   router: {
     options: {
