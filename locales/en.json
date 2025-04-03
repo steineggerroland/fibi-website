@@ -56,31 +56,31 @@
   "index.early-access.further-information": "Want to know more on Fibi's and their creators background?",
   "index.contact.title": "Contact",
   "index.secure-contact.title": "Secure Contact",
-  "index.secure-contact.teaser": "Email communication is not secure by design, thus, if you want to send a real secure mail, you can use my Public PGP Key. PGP encryption ensures, that just I can read the mail.",
+  "index.secure-contact.teaser": "Email communication is not secure by design, thus, if you want to send a real secure mail, you can use my Public PGP Key. PGP encryption ensures, that just I can read the mail. Software like {software} supports secure mails easily.",
   "index.secure-contact.teaser-software-like-thunderbird-supports-secure-mails-pre": "Software like",
   "index.secure-contact.teaser-software-like-thunderbird-supports-secure-mails-post": "supports secure mails easily.",
   "index.background.title": "Background on Fibi and their creators",
   "index.background.tab.who-am-i-why-fibi.title": "Who am I? Why Fibi?",
-  "index.background.tab.who-am-i-why-fibi.text": "Hello, I’m Roland—a software developer with autism and ADHD who’s always struggled to stay organized. I dreamed of a personal helper who could nudge me gently, remind me of tasks, and keep everything in one place. Once large language models emerged, it finally felt possible to bring “Fibi” to life!",
+  "index.background.tab.who-am-i-why-fibi.text": "Hello, I'm Roland—a software developer with autism and ADHD who's always struggled to stay organized. I dreamed of a personal helper who could nudge me gently, remind me of tasks, and keep everything in one place. Once large language models emerged, it finally felt possible to bring \"Fibi\" to life!",
   "index.background.tab.ongoing-journey-of-fibi.title": "Ongoing journey of Fibi",
-  "index.background.tab.ongoing-journey-of-fibi.text": "The ongoing journey of Fibi Fibi already supports tasks, calendar syncing (CalDAV/ICS), reminders, timers, and even a morning routine feature. But there’s more I’d love to improve. I’m currently running a smaller language model locally for privacy, and new hardware would help me scale while keeping your data secure and private. That’s why I’m seeking funding—to build a more robust system and add the advanced features our community needs, all without handing any personal data to third parties.",
+  "index.background.tab.ongoing-journey-of-fibi.text": "The ongoing journey of Fibi Fibi already supports tasks, calendar syncing (CalDAV/ICS), reminders, timers, and even a morning routine feature. But there's more I'd love to improve. I'm currently running a smaller language model locally for privacy, and new hardware would help me scale while keeping your data secure and private. That's why I'm seeking funding—to build a more robust system and add the advanced features our community needs, all without handing any personal data to third parties.",
   "legal-notice.title": "Legal notice",
   "legal-notice.contact.title": "Contact",
   "legal-notice.contact.editorial-responsibility.title": "Editorial Responsibility",
   "index.footnote.these-are-features-id-love-to-implement-but-that-are-complex-and-need-funding": "* These are features I'd love to implement, but that are complex and need funding.",
   "general.avatar.fibi": "Picture representing Fibi as a cute animal",
   "general.avatar.sloth": "A cute little sloth as a placeholder for your picture",
-  "contact-form.privacy-notice": "Don't send personal information using the form. The data is processed by",
+  "contact-form.privacy-notice": "Don't send personal information using the form. The data is processed by third parties.",
   "contact-form.email-label": "Email:",
   "contact-form.email-placeholder": "you",
   "contact-form.message-label": "What can we help you with?",
   "contact-form.message-placeholder": "Hi Fibi Team, ...",
-  "contact-form.accept-processed-by-label": "I accept that my data is processed by",
+  "contact-form.accept-processed-by-label": "I accept that my data is processed by {thirdParty}.",
   "contact-form.submit": "Send",
   "contact-form.start-conversation-template": "Hi Fibi-Team,\n\nI am interested in using Fibi.\nMy name is: ##Your Name##\nFibi can support me to ##Why do you want to use Fibi?##\n\nKind regards",
   "contact-form.join-beta-template": "Hi Fibi-Team,\n\nI am interested in joining the beta.\nMy name is: ##Your Name##\nFibi can support me to ##Why do you want to use Fibi?##\nI am willing to give feedback to improve Fibi.\n\nKind regards",
   "card.friendly-reminders.title": "Friendly Reminders",
-  "card.friendly-reminders.text": "Fibi: “Are there any follow-up tasks for your last appointment?”",
+  "card.friendly-reminders.text": "Fibi: \"Are there any follow-up tasks for your last appointment?\"",
   "chat-example.title": "Chat Example",
   "chat-example.you": "You",
   "chat-example.friendly-reminders.1-you": "Remind me to add tasks and appointments after I pick up Jane from Kindergarten.",
@@ -117,5 +117,72 @@
   "index.early-access.benefits.a-companion-who-suppots-you": "A companion who suppots you",
   "index.early-access.benefits.at-least-2-years-free-access": "At least 2 years free access",
   "index.early-access.benefits.shape-fibi-your-feedback-leads-to-features-you-need": "Shape Fibi - your feedback leads to features you need",
-  "index.early-access.benefits.lifetime-access-for-significant-support": "Lifetime access for significant support"
+  "index.early-access.benefits.lifetime-access-for-significant-support": "Lifetime access for significant support",
+  "privacy": {
+    "title": "Privacy Settings",
+    "toggle-privacy-settings": "Toggle Privacy Settings",
+    "hide-privacy-settings": "Close Privacy Settings",
+    "privacyPolicy": "Our Privacy Policy",
+    "necessary": "We process your IP address (anonymized) to prevent attacks on our website hosted by strato.de. This is necessary for security purposes and cannot be disabled.",
+    "analytics": "I accept that you collect browser and platform data to improve your services.",
+    "tracking": "I accept that you collect behavioral information to improve user experience and track service performance.",
+    "accept-analytics": "Accept Analytics",
+    "accept-tracking": "Accept Tracking"
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "last-updated": "Last updated: March 2024",
+    "meta": {
+      "title": "Privacy Policy - Fibi",
+      "description": "Information about how we handle your data at Fibi"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "text": "This privacy policy explains how I, Roland Steinegger, handle your personal data when you use Fibi. I am committed to protecting your privacy and ensuring the security of your personal information."
+    },
+    "controller": {
+      "title": "Data Controller",
+      "name": "Roland Steinegger",
+      "address": "Koppoldstr. 1, c/o COCENTER, 86551 Aichach",
+      "email": "roland{'@'}neurospicy.icu"
+    },
+    "data-processing": {
+      "title": "Data Processing",
+      "intro": "I process different types of data depending on your privacy settings:",
+      "necessary": {
+        "title": "Necessary Data Processing",
+        "text": "For security purposes, I process your anonymized IP address to prevent attacks on my website hosted by {hostingProvider}. This processing is necessary for the operation of the website and cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics Data",
+        "text": "If you accept analytics, I collect browser and platform data to improve my services. This includes information about your browser type, operating system, and device type. This data helps me understand how users interact with my website and improve the user experience."
+      },
+      "tracking": {
+        "title": "Behavioral Tracking",
+        "text": "If you accept tracking, I collect behavioral information to enhance user experience and track service performance. This includes information about how you interact with my website, such as which pages you visit and how long you stay on them."
+      }
+    },
+    "legal-basis": {
+      "title": "Legal Basis for Processing",
+      "text": "The processing of your data is based on your consent (Art. 6(1)(a) GDPR) for analytics and tracking. The processing of your IP address for security purposes is based on my legitimate interest in protecting my website (Art. 6(1)(f) GDPR)."
+    },
+    "data-retention": {
+      "title": "Data Retention",
+      "text": "I retain your data only for as long as necessary to fulfill the purposes for which it was collected. Analytics and tracking data are retained for up to 26 months. Security logs containing IP addresses are retained for up to 7 days."
+    },
+    "your-rights": {
+      "title": "Your Rights",
+      "intro": "Under the GDPR, you have the following rights regarding your personal data:",
+      "access": "Right to access your personal data",
+      "rectification": "Right to rectification of inaccurate data",
+      "erasure": "Right to erasure ('right to be forgotten')",
+      "restriction": "Right to restriction of processing",
+      "objection": "Right to object to processing",
+      "portability": "Right to data portability"
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "If you have any questions about this privacy policy or your personal data, please contact me at {email}"
+    }
+  }
 }

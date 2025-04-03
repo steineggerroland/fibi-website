@@ -3,8 +3,7 @@
     <b-p>
       <Alert color="warning" flex align-items="center">
         <BIcon icon="bi:exclamation-triangle-fill" flex="shrink-0" margin="e-2" aria-label="Warning:" />
-        <div>{{ $t('contact-form.privacy-notice') }} <Anchor
-            href="https://formspree.io" external>formspree.io</Anchor>.</div>
+        <div>{{ $t('contact-form.privacy-notice') }}</div>
       </Alert>
     </b-p>
     <b-p>
@@ -24,8 +23,12 @@
     <b-p>
       <BFormCheck>
         <BFormCheckInput required />
-        <BFormCheckLabel>{{ $t('contact-form.accept-processed-by-label') }} <Anchor
-            href="https://formspree.io/legal/privacy-policy/" external>formspree.io</Anchor>.
+        <BFormCheckLabel>
+          <i18n-t keypath="contact-form.accept-processed-by-label" tag="span">
+            <template #thirdParty>
+              <Anchor href="https://formspree.io/legal/privacy-policy/" external>formspree.io</Anchor>
+            </template>
+          </i18n-t>.
         </BFormCheckLabel>
       </BFormCheck>
     </b-p>

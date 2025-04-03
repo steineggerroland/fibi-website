@@ -248,10 +248,13 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             {{ $t('index.secure-contact.title') }}
         </b-h>
         <b-p>
-            <b-p>{{ $t('index.secure-contact.teaser') }} {{ $t('index.secure-contact.teaser-software-like-thunderbird-supports-secure-mails-pre') }} <Anchor
-                    href="https://support.mozilla.org/de/kb/openpgp-in-thunderbird-leitfaden-und-faqs" external>
-                    Thunderbird
-                </Anchor> {{ $t('index.secure-contact.teaser-software-like-thunderbird-supports-secure-mails-post') }}</b-p>
+            <i18n-t keypath="index.secure-contact.teaser" tag="b-p">
+                <template #software>
+                    <Anchor href="https://support.mozilla.org/de/kb/openpgp-in-thunderbird-leitfaden-und-faqs" external>
+                        Thunderbird
+                    </Anchor>
+                </template>
+            </i18n-t>
             <Accordion parent>
                 <AccordionSection title="Public Key">
                     <UseClipboard v-slot="{ copy, copied }" :source="publicKey">
