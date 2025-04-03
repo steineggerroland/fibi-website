@@ -120,14 +120,14 @@
   "index.early-access.benefits.lifetime-access-for-significant-support": "Lifetime access for significant support",
   "privacy": {
     "title": "Privacy Settings",
-    "toggle-privacy-settings": "Toggle Privacy Settings",
     "hide-privacy-settings": "Close Privacy Settings",
     "privacyPolicy": "Our Privacy Policy",
     "necessary": "We process your IP address (anonymized) to prevent attacks on our website hosted by strato.de. This is necessary for security purposes and cannot be disabled.",
     "analytics": "I accept that you collect browser and platform data to improve your services.",
     "tracking": "I accept that you collect behavioral information to improve user experience and track service performance.",
     "accept-analytics": "Accept Analytics",
-    "accept-tracking": "Accept Tracking"
+    "accept-tracking": "Accept Tracking",
+    "use-necessary-data-only": "Use only necessary data"
   },
   "privacy-policy": {
     "title": "Privacy Policy",
@@ -184,5 +184,18 @@
       "title": "Contact",
       "text": "If you have any questions about this privacy policy or your personal data, please contact me at {email}"
     }
+  },
+  "navbar": {
+    "home": "This is Fibi",
+    "toggle-privacy-settings": "Toggle Privacy Settings",
+    "toggle-color-mode": "Toggle Color Mode",
+    "language": "Language"
+  },
+  "footer": {
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "text": "More information can be found in our privacy policy."
+    },
+    "copyright": "© 2025 Roland Steinegger"
   }
 }

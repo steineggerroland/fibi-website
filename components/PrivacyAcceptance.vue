@@ -1,22 +1,23 @@
 <template>
     <b-div display="grid" gap="2" class="privacy-content">
         <Row class="privacy-header">
-            <b-h level="2">{{ $t('privacy.title') }} <b-button color="light" size="sm" @click="togglePrivacyNotes">{{ $t('privacy.hide-privacy-settings') }}</b-button></b-h>
-            <b-p><Anchor href="/privacy-policy" target="_blank">{{ $t('privacy.privacyPolicy') }}</Anchor></b-p>
+            <b-h level="2">{{ $t('privacy.title') }} <b-button v-if="!isPrivacyPolicy" color="light" size="sm" @click="useNecessaryDataOnly">{{ $t('privacy.hide-privacy-settings') }}</b-button></b-h>
+            <b-p v-if="!isPrivacyPolicy"><Anchor href="/privacy-policy" target="_blank">{{ $t('privacy.privacyPolicy') }}</Anchor></b-p>
         </Row>
         <Row class="privacy-option">
             <Col>{{ $t('privacy.necessary') }}
             </Col>
-            <Col col="lg-2" display="grid" gap="2" margin="x-auto">
-            <b-button color="success" size="sm" @click="togglePrivacyNotes">
-                {{ $t('privacy.hide-privacy-settings') }}
+            <Col :col="isPrivacyPolicy ? '4' : 'lg-2'" display="grid" gap="2" margin="x-auto">
+            <b-button color="success" size="sm" @click="useNecessaryDataOnly">
+                <span v-if="!isPrivacyPolicy">{{ $t('privacy.hide-privacy-settings') }}</span>
+                <span v-else>{{ $t('privacy.use-necessary-data-only') }}</span>
             </b-button>
             </Col>
         </Row>
         <b-hr margin="y-0" />
         <Row class="privacy-option">
             <Col>{{ $t('privacy.analytics') }}</Col>
-            <Col col="lg-2" display="grid" gap="2" margin="x-auto">
+            <Col :col="isPrivacyPolicy ? '4' : 'lg-2'" display="grid" gap="2" margin="x-auto">
             <b-button color="primary" size="sm" @click="acceptAnalytics">
                 {{ $t('privacy.accept-analytics') }}
             </b-button>
@@ -25,7 +26,7 @@
         <b-hr margin="y-0" />
         <Row class="privacy-option">
             <Col>{{ $t('privacy.tracking') }}</Col>
-            <Col col="lg-2" display="grid" gap="2" margin="x-auto">
+            <Col :col="isPrivacyPolicy ? '4' : 'lg-2'" display="grid" gap="2" margin="x-auto">
             <b-button color="warning" size="sm" @click="acceptTracking">
                 {{ $t('privacy.accept-tracking') }}
             </b-button>
@@ -35,6 +36,12 @@
 </template>
 
 <script setup lang="ts">
+const props = defineProps({
+    isPrivacyPolicy: {
+        type: Boolean,
+        default: false
+    }
+})
 
 const collapseAndSave = (type: 'necessary' | 'analytics' | 'tracking') => {
     localStorage.setItem('privacyAccepted', 'true')
@@ -48,7 +55,7 @@ const collapseAndSave = (type: 'necessary' | 'analytics' | 'tracking') => {
     })
 }
 
-const togglePrivacyNotes = () => {
+const useNecessaryDataOnly = () => {
     collapseAndSave('necessary')
 }
 

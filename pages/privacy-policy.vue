@@ -61,13 +61,16 @@
                     </i18n-t>
                 </Col>
             </Row>
+            <Row margin="y-5">
+                <PrivacyAcceptance is-privacy-policy/>
+            </Row>
         </Container>
     </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-    layout: 'landing'
+    layout: 'privacy'
 })
 const {t} = useI18n()
 

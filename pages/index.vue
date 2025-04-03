@@ -323,6 +323,12 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                     86551 Aichach<br>
                 </b-p>
                 </Col>
+                <Col>
+                <b-h level="3">{{ $t('footer.privacy-policy.title') }}</b-h>
+                <b-p>
+                    <Anchor href="/privacy-policy">{{ $t('footer.privacy-policy.text') }}</Anchor>
+                </b-p>
+                </Col>  
             </Row>
             <Row>
                 <b-p id="featuresThatNeedFunding">
@@ -333,7 +339,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     </Background>
     <Background background-color="dark-subtle">
         <Container text-alignment="center">
-            © 2025 Roland Steinegger
+            {{ $t('footer.copyright') }}
         </Container>
     </Background>
 </template>

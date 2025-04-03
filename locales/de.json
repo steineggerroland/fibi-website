@@ -120,14 +120,14 @@
   "index.early-access.benefits.lifetime-access-for-significant-support": "Lebenslanges Nutzungsrecht bei bedeutender Unterstützung",
   "privacy": {
     "title": "Datenschutzeinstellungen",
-    "toggle-privacy-settings": "Datenschutzeinstellungen anzeigen/verbergen",
     "hide-privacy-settings": "Datenschutzeinstellungen ausblenden",
     "privacyPolicy": "Unsere Datenschutzhinweise",
     "necessary": "Wir verarbeiten Ihre IP-Adresse (anonymisiert), um Angriffe auf unsere bei strato.de gehostete Website zu verhindern. Dies ist für Sicherheitszwecke erforderlich und kann nicht deaktiviert werden.",
     "analytics": "Ich akzeptiere, dass Sie Browser- und Plattformdaten sammeln, um Ihre Dienste zu verbessern.",
     "tracking": "Ich akzeptiere, dass Sie Verhaltensinformationen sammeln, um die Benutzerfreundlichkeit zu verbessern und die Leistung der Dienste zu verfolgen.",
     "accept-analytics": "Analytics akzeptieren",
-    "accept-tracking": "Tracking akzeptieren"
+    "accept-tracking": "Tracking akzeptieren",
+    "use-necessary-data-only": "Nur notwendige Daten verarbeiten"
   },
   "privacy-policy": {
     "title": "Datenschutzhinweise",
@@ -184,5 +184,18 @@
       "title": "Kontakt",
       "text": "Wenn Sie Fragen zu diesen Datenschutzhinweisen oder Ihren personenbezogenen Daten haben, kontaktieren Sie mich bitte unter {email}"
     }
+  },
+  "navbar": {
+    "home": "Das ist Fibi",
+    "toggle-privacy-settings": "Datenschutzeinstellungen anzeigen/verbergen",
+    "toggle-color-mode": "Farbschema wechseln",
+    "language": "Sprache / Language"
+  },
+  "footer": {
+    "privacy-policy": {
+      "title": "Datenschutzhinweise",
+      "text": "Weitere Informationen finden Sie in unseren Datenschutzhinweisen."
+    },
+    "copyright": "© 2025 Roland Steinegger"
   }
 }
