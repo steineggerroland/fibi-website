@@ -1,5 +1,5 @@
 <template>
-  <Navbar expand="md" background-color="white" background-opacity="75" sticky="top" class="flex-wrap navbar top-of-site"
+  <Navbar expand="md" background-color="light" background-opacity="50" sticky="top" class="flex-wrap navbar top-of-site"
     ref="navbar">
     <Container>
       <NavbarToggler target="#navbar-collapse" margin="s-auto" />
@@ -82,7 +82,6 @@ const handlePrivacyAccepted = (settings: { analytics: boolean; tracking: boolean
   updatePrivacySettings(settings)
 }
 
-const logo = useTemplateRef('logo')
 const topOfSiteIndicatorPixel = useTemplateRef('topOfSiteIndicatorPixel')
 const navbar = useTemplateRef('navbar')
 onMounted(() => {
@@ -101,11 +100,11 @@ onMounted(() => {
       if (entries[0].boundingClientRect.y < 0) {
         navbar.value?.$el.classList.remove("top-of-site");
         navbar.value!.$el.classList.add("bg-opacity-25");
-        navbar.value!.$el.classList.remove("bg-opacity-75");
+        navbar.value!.$el.classList.remove("bg-opacity-50");
       } else {
         navbar.value?.$el.classList.add("top-of-site");
         navbar.value!.$el.classList.remove("bg-opacity-25");
-        navbar.value!.$el.classList.add("bg-opacity-75");
+        navbar.value!.$el.classList.add("bg-opacity-50");
       }
     });
     observer.observe(topOfSiteIndicatorPixel.value!);
