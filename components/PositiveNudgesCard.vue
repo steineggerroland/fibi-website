@@ -1,7 +1,7 @@
 <template>
     <Card class="hover:-un-translate-y-1 hover:-un-translate-x-1 hover:-un-shadow-xl">
         <CardBody>
-            <CardTitle border="bottom" border-width="4"><Anchor text-decoration="none" href="/#positiveNudges">{{ $t('card.positive-nudges.title') }}</Anchor></CardTitle>
+            <CardTitle border="bottom" border-width="4"><NuxtLink text-decoration="none" :to="localePath('/#positiveNudges')">{{ $t('card.positive-nudges.title') }}</NuxtLink></CardTitle>
             <CardText text-color="body-secondary">
                 {{ $t('card.positive-nudges.text') }}
             </CardText>
@@ -17,3 +17,7 @@
     box-shadow: 0.25em 0.25em 0 0 rgb(0 0 0/0.1), 0.125em 0.125em 0 0 rgb(0 0 0/0.1);
 }
 </style>
+<script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
+</script>

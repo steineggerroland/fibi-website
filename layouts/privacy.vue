@@ -1,7 +1,7 @@
 <template>
     <Navbar expand="md" background-color="light" background-opacity="25" sticky="top">
         <Container>
-            <NavbarBrand to="/" class="navbar-brand">
+            <NavbarBrand :to="localePath('/')" class="navbar-brand">
                 <b-img src="/logo.png" alt="Logo" height="40px" />
             </NavbarBrand>
             <NavbarToggler />
@@ -9,7 +9,7 @@
                 <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom"
                     :title="$t('navbar.toggle-color-mode')">
                     <NavItem>
-                        <NavLink to="/">{{ $t('navbar.home') }}</NavLink>
+                        <NuxtLink :to="localePath('/')">{{ $t('navbar.home') }}</NuxtLink>
                     </NavItem>
                     <ColorModeNavItemDropdown style="cursor: pointer;" />
                     <NavItemDropdown>
@@ -34,12 +34,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n'
-import { useSwitchLocalePath } from '#i18n'
 import { NavItem } from '#components'
 
 const { t } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
 </script>
 
 <style scoped>

@@ -1,8 +1,23 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { useLocalePath } from '#i18n'
+import { definePageMeta } from '#imports'
+
 definePageMeta({
     layout: 'landing'
 })
-const {t} = useI18n()
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+const scrollToContactForm = () => {
+  setTimeout(() => {
+    const element = document.getElementById('contact-form')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, 100)
+}
+
 useSeoMeta({
   title: t('page-title'),
   ogTitle: t('page-title'),
@@ -54,8 +69,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </b-p>
             </Container>
             <Container margin="y-2">
-                <Anchor href="/actions/startConversation"><b-button color="primary" size="lg" padding="y-3 x-5"
-                        font-weight="light" font-size="2">{{ $t('index.hero.start-chat') }}</b-button></Anchor>
+                <NuxtLink :to="{ path: localePath('/'), hash: '#contact-form', query: { startConversation: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg" padding="y-3 x-5"
+                        font-weight="light" font-size="2">{{ $t('index.hero.start-chat') }}</b-button></NuxtLink>
             </Container>
         </HeroRow>
     </div>
@@ -231,10 +246,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </List>
         </b-p>
         <b-p>
-            <Anchor href="actions/joinBeta"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></Anchor>
+            <NuxtLink :to="{ path: localePath('/'), hash: '#contact-form', query: { joinBeta: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></NuxtLink>
         </b-p>
         <b-p>
-            <Anchor href="#about">{{ $t('index.early-access.further-information') }}</Anchor>
+            <NuxtLink :to="localePath('/#about')">{{ $t('index.early-access.further-information') }}</NuxtLink>
         </b-p>
     </Container>
     <Background background-color="info-subtle">
@@ -326,7 +341,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 <Col>
                 <b-h level="3">{{ $t('footer.privacy-policy.title') }}</b-h>
                 <b-p>
-                    <Anchor href="/privacy-policy">{{ $t('footer.privacy-policy.text') }}</Anchor>
+                    <NuxtLink :to="localePath('/privacy-policy')">{{ $t('footer.privacy-policy.text') }}</NuxtLink>
                 </b-p>
                 </Col>  
             </Row>

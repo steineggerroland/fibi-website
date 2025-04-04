@@ -2,7 +2,7 @@
     <b-div display="grid" gap="2" class="privacy-content">
         <Row class="privacy-header">
             <b-h level="2">{{ $t('privacy.title') }} <b-button v-if="!isPrivacyPolicy" color="light" size="sm" @click="useNecessaryDataOnly">{{ $t('privacy.hide-privacy-settings') }}</b-button></b-h>
-            <b-p v-if="!isPrivacyPolicy"><Anchor href="/privacy-policy" target="_blank">{{ $t('privacy.privacyPolicy') }}</Anchor></b-p>
+            <b-p v-if="!isPrivacyPolicy"><NuxtLink :to="localePath('/privacy-policy')" target="_blank">{{ $t('privacy.privacyPolicy') }}</NuxtLink></b-p>
         </Row>
         <Row class="privacy-option">
             <Col>{{ $t('privacy.necessary') }}
@@ -36,6 +36,12 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { useLocalePath } from '#i18n'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 const props = defineProps({
     isPrivacyPolicy: {
         type: Boolean,

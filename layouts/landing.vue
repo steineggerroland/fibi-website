@@ -3,7 +3,7 @@
     <Container>
       <NavbarToggler target="#navbar-collapse" margin="s-auto" />
       <NavbarCollapse id="navbar-collapse">
-        <NavbarBrand to="/" class="navbar-brand">
+        <NavbarBrand :to="localePath('/')" class="navbar-brand">
           <b-img src="/logo.png" alt="Logo" height="40px" />
         </NavbarBrand>
         <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom" :title="$t('navbar.toggle-color-mode')">
@@ -39,9 +39,11 @@
 </template>
 <script lang="ts" setup>
 import { NavItem } from '#components';
+import { useSwitchLocalePath, useLocalePath } from '#i18n'
 
 const switchLocalePath = useSwitchLocalePath()
-const privacyAcceptance = ref(null)
+const localePath = useLocalePath()
+const privacyAcceptance = ref<{ hide: () => void; show: () => void } | null>(null)
 const { updatePrivacySettings } = usePrivacy()
 
 const handlePrivacyAccepted = (settings: { analytics: boolean; tracking: boolean }) => {
