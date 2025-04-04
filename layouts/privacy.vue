@@ -9,7 +9,7 @@
                 <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom"
                     :title="$t('navbar.toggle-color-mode')">
                     <NavItem>
-                        <NuxtLink :to="localePath('/')">{{ $t('navbar.home') }}</NuxtLink>
+                        <NavLink :to="localePath('/')">{{ $t('navbar.home') }}</NavLink>
                     </NavItem>
                     <ColorModeNavItemDropdown style="cursor: pointer;" />
                     <NavItemDropdown>
