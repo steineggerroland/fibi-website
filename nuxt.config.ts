@@ -54,6 +54,21 @@ export default defineNuxtConfig({
            `
         }
       }
+    },
+    build: {
+      target: 'esnext'
+    }
+  },
+  nitro: {
+    preset: 'static',
+    compressPublicAssets: true,
+    minify: true
+  },
+  app: {
+    head: {
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' }
+      ]
     }
   }
 })
