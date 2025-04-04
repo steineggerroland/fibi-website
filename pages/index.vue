@@ -11,7 +11,7 @@ const localePath = useLocalePath()
 
 const scrollToContactForm = () => {
   setTimeout(() => {
-    const element = document.getElementById('contact-form')
+    const element = document.getElementById('contactForm')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
@@ -69,13 +69,18 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </b-p>
             </Container>
             <Container margin="y-2">
-                <NuxtLink :to="{ path: localePath('/'), hash: '#contact-form', query: { startConversation: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg" padding="y-3 x-5"
+                <NuxtLink :to="{ path: localePath('/'), hash: '#contactForm', query: { startConversation: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg" padding="y-3 x-5"
                         font-weight="light" font-size="2">{{ $t('index.hero.start-chat') }}</b-button></NuxtLink>
             </Container>
         </HeroRow>
     </div>
     <Background background-color="info-subtle" margin="y-5">
         <Container margin="y-5">
+            <Row invisible>
+                <Col>
+                    <h2 id="features">{{ $t('index.features.title') }}</h2>
+                </Col>
+            </Row>
             <Row columns="1 sm-2 lg-3 xl-4" gutter="5">
                 <Col>
                 <MorningRoutineCard margin="auto"></MorningRoutineCard>
@@ -227,7 +232,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         </Container>
     </Background>
     <Container margin="y-5" flex-direction="column" style="max-width: 768px;">
-        <b-h level="2" font-size="1" margin="b-4">{{ $t('index.early-access.title') }}</b-h>
+        <b-h id="earlyAccess" level="2" font-size="1" margin="b-4">{{ $t('index.early-access.title') }}</b-h>
         <b-p>
             {{ $t('index.early-access.teaser') }}
             <List>
@@ -246,7 +251,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </List>
         </b-p>
         <b-p>
-            <NuxtLink :to="{ path: localePath('/'), hash: '#contact-form', query: { joinBeta: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></NuxtLink>
+            <NuxtLink :to="{ path: localePath('/'), hash: '#contactForm', query: { joinBeta: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></NuxtLink>
         </b-p>
         <b-p>
             <NuxtLink :to="localePath('/#about')">{{ $t('index.early-access.further-information') }}</NuxtLink>
@@ -254,7 +259,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     </Container>
     <Background background-color="info-subtle">
         <Container margin="y-5" style="max-width: 768px;">
-            <b-h level="2" id="contact-form">{{ $t('index.contact.title') }}</b-h>
+            <b-h level="2" id="contactForm">{{ $t('index.contact.title') }}</b-h>
             <ContactForm></ContactForm>
         </Container>
     </Background>
@@ -318,7 +323,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <Container margin="y-5">
             <Row>
                 <Col>
-                <b-h level="2">{{ $t('legal-notice.title') }}</b-h>
+                <b-h id="legalNotice" level="2">{{ $t('legal-notice.title') }}</b-h>
                 <b-p>
                     Roland Steinegger<br>
                     Koppoldstr. 1<br>

@@ -189,7 +189,17 @@
     "home": "This is Niva",
     "toggle-privacy-settings": "Toggle Privacy Settings",
     "toggle-color-mode": "Toggle Color Mode",
-    "language": "Language"
+    "language": "Language",
+    "brand": {
+      "name": "Niva"
+    },
+    "link": {
+      "features": "Features",
+      "early-access": "Early Access",
+      "contact": "Contact",
+      "about": "About",
+      "privacy": "Legal Notice"
+    }
   },
   "footer": {
     "privacy-policy": {

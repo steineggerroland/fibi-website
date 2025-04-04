@@ -1,12 +1,39 @@
 <template>
-  <Navbar expand="md" background-color="white" background-opacity="75" sticky="top" class="flex-wrap navbar top-of-site" ref="navbar">
+  <Navbar expand="md" background-color="white" background-opacity="75" sticky="top" class="flex-wrap navbar top-of-site"
+    ref="navbar">
     <Container>
       <NavbarToggler target="#navbar-collapse" margin="s-auto" />
       <NavbarCollapse id="navbar-collapse">
         <NavbarBrand :to="localePath('/')" class="navbar-brand">
-          <b-img src="/logo.png" alt="Logo" height="40px" ref="logo" class="top-of-site" />
+          <b-img src="/logo.png" alt="Logo" height="40px" ref="logo" />
+          <b-span small margin="x-2">{{ $t('navbar.brand.name') }}</b-span>
         </NavbarBrand>
         <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom" :title="$t('navbar.toggle-color-mode')">
+          <NavItem>
+            <NavLink :to="localePath('/#features')">
+              {{ $t('navbar.link.features') }}
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink :to="localePath('/#earlyAccess')">
+              {{ $t('navbar.link.early-access') }}
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink :to="localePath('/#contactForm')">
+              {{ $t('navbar.link.contact') }}
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink :to="localePath('/#about')">
+              {{ $t('navbar.link.about') }}
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink :to="localePath('/#legalNotice')">
+              {{ $t('navbar.link.privacy') }}
+            </NavLink>
+          </NavItem>
           <ColorModeNavItemDropdown style="cursor: pointer;" />
           <NavItemDropdown>
             <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip"
@@ -91,17 +118,21 @@ onMounted(() => {
   transition: all 500ms ease-in;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 }
-.navbar-brand img {
+
+.navbar-brand {
   text-decoration: none;
   transition: opacity 500ms ease-in;
   opacity: 1;
 }
-.navbar.top-of-site .navbar-brand img {
-  opacity: 0;
-}
-.navbar-brand img:hover {
+
+.navbar.top-of-site .navbar-brand:hover {
   opacity: 0.8;
 }
+
+.navbar.top-of-site .navbar-brand {
+  opacity: 0;
+}
+
 
 #top-of-site-indicator-pixel {
   position: absolute;
@@ -112,5 +143,4 @@ onMounted(() => {
   background-color: transparent;
   z-index: -1;
 }
-
 </style>
