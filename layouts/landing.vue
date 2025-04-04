@@ -1,15 +1,16 @@
 <template>
-  <Navbar expand="md" background-color="white" background-opacity="25" sticky="top" class="flex-wrap">
+  <Navbar expand="md" background-color="white" background-opacity="75" sticky="top" class="flex-wrap navbar top-of-site" ref="navbar">
     <Container>
       <NavbarToggler target="#navbar-collapse" margin="s-auto" />
       <NavbarCollapse id="navbar-collapse">
         <NavbarBrand :to="localePath('/')" class="navbar-brand">
-          <b-img src="/logo.png" alt="Logo" height="40px" />
+          <b-img src="/logo.png" alt="Logo" height="40px" ref="logo" class="top-of-site" />
         </NavbarBrand>
         <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom" :title="$t('navbar.toggle-color-mode')">
           <ColorModeNavItemDropdown style="cursor: pointer;" />
           <NavItemDropdown>
-            <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip" :title="$t('navbar.language')">🌐</span></NavItemDropdownToggle>
+            <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip"
+                :title="$t('navbar.language')">🌐</span></NavItemDropdownToggle>
             <DropdownMenu>
               <DropdownItem>
                 <NuxtLink :to="switchLocalePath('de')">Deutsch 🇩🇪</NuxtLink>
@@ -33,6 +34,9 @@
         </Container>
       </Collapse>
     </Container>
+    <Teleport to="body">
+      <div id="top-of-site-indicator-pixel" ref="topOfSiteIndicatorPixel"></div>
+    </Teleport>
   </Navbar>
 
   <slot />
@@ -50,20 +54,63 @@ const handlePrivacyAccepted = (settings: { analytics: boolean; tracking: boolean
   privacyAcceptance.value?.hide()
   updatePrivacySettings(settings)
 }
+
+const logo = useTemplateRef('logo')
+const topOfSiteIndicatorPixel = useTemplateRef('topOfSiteIndicatorPixel')
+const navbar = useTemplateRef('navbar')
 onMounted(() => {
   if (localStorage.getItem('privacyAccepted') !== 'true') {
     privacyAcceptance.value?.show()
+  }
+
+  // Check if IntersectionObserver is supported
+  if (
+    "IntersectionObserver" in window &&
+    "IntersectionObserverEntry" in window &&
+    "intersectionRatio" in window.IntersectionObserverEntry.prototype
+  ) {
+    // If the logo is not visible, it means the user is at the top of the page
+    let observer = new IntersectionObserver(entries => {
+      if (entries[0].boundingClientRect.y < 0) {
+        navbar.value?.$el.classList.remove("top-of-site");
+        navbar.value!.$el.classList.add("bg-opacity-25");
+        navbar.value!.$el.classList.remove("bg-opacity-75");
+      } else {
+        navbar.value?.$el.classList.add("top-of-site");
+        navbar.value!.$el.classList.remove("bg-opacity-25");
+        navbar.value!.$el.classList.add("bg-opacity-75");
+      }
+    });
+    observer.observe(topOfSiteIndicatorPixel.value!);
   }
 })
 </script>
 
 <style scoped>
+.navbar {
+  transition: all 500ms ease-in;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+}
 .navbar-brand img {
-    text-decoration: none;
-    transition: opacity 0.2s;
+  text-decoration: none;
+  transition: opacity 500ms ease-in;
+  opacity: 1;
+}
+.navbar.top-of-site .navbar-brand img {
+  opacity: 0;
+}
+.navbar-brand img:hover {
+  opacity: 0.8;
 }
 
-.navbar-brand img:hover {
-    opacity: 0.8;
+#top-of-site-indicator-pixel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 90vh;
+  left: 0;
+  background-color: transparent;
+  z-index: -1;
 }
+
 </style>
