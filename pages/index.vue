@@ -44,8 +44,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <HeroRow size="md-10 lg-8" margin="y-5">
             <Container>
                 <b-h level="1" line-height="0" class="display-4 mb-5">
-                    <Avatar circle size="sm" img-src="fibi.png" img-alt="Picture representing Fibi as a cute animal" />
-                    Fibi:<br>{{$t('index.fibi-properties.prefix')}} <br class="hideOnBig"/><Typed class="text-primary" :strings="[$t('index.fibi-properties.day-planner'), $t('index.fibi-properties.companion'), $t('index.fibi-properties.reminder'), $t('index.fibi-properties.companion'), $t('index.fibi-properties.assistant')]">
+                    <Avatar circle size="sm" img-src="/niva.png" img-alt="Niva" />
+                    Niva:<br>{{$t('index.properties.prefix')}} <br class="hideOnBig"/><Typed class="text-primary" :strings="[$t('index.properties.day-planner'), $t('index.properties.companion'), $t('index.properties.reminder'), $t('index.properties.companion'), $t('index.properties.assistant')]">
                     </Typed><br><b-div padding="0" font-size="4">{{$t('index.hero.subtitle')}}</b-div>
                 </b-h>
                 <b-p class="mb-1" font-size="5">
@@ -113,7 +113,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </b-div>
         </Row>
         <Row>
-            <Col>
+            <Col class="col-12 col-md-6">
             <MorningRoutineChat background-color="info-subtle"></MorningRoutineChat>
             </Col>
             <Col>
@@ -143,15 +143,15 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </b-div>
             </Row>
             <Row>
-                <Col>
+                <Col class="col-12 col-md-6">
                 <TaskAndCalendarSyncChat></TaskAndCalendarSyncChat>
                 </Col>
                 <Col>
                 <List font-size="5">
-                    <ListItem>{{ $t('index.taskCalendarSync.fibi-looks-for-unusual-events') }}</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.fairy-looks-for-unusual-events') }}</ListItem>
                     <ListItem>{{ $t('index.taskCalendarSync.get-answers-to-when-is-my-next-doctor-appointment') }}</ListItem>
                     <ListItem>{{ $t('index.taskCalendarSync.block-time-slots-for-tasks') }}</ListItem>
-                    <ListItem>{{ $t('index.taskCalendarSync.split-big-tasks-with-help-by-fibi') }}</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.split-big-tasks-with-help-by-fairy') }}</ListItem>
                 </List>
                 <BBlockquoteFigure>
                     <BBlockquote>
@@ -174,12 +174,12 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </b-div>
         </Row>
         <Row>
-            <Col>
+            <Col class="col-12 col-md-6">
             <PositiveNudgesChat background-color="info-subtle"></PositiveNudgesChat>
             </Col>
             <Col>
             <List font-size="5">
-                <ListItem>{{ $t('index.positive-nudges.fibi-is-your-safe-space') }}</ListItem>
+                <ListItem>{{ $t('index.positive-nudges.fairy-is-your-safe-space') }}</ListItem>
                 <ListItem>{{ $t('index.positive-nudges.reminding-you-without-being-pushy') }}</ListItem>
                 <ListItem>{{ $t('index.positive-nudges.gives-ideas-how-to-start-small') }}</ListItem>
                 <ListItem>{{ $t('index.positive-nudges.knows-your-calendar-and-when-there-is-time') }}</ListItem>
@@ -206,12 +206,12 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </b-div>
             </Row>
             <Row>
-                <Col>
+                <Col class="col-12 col-md-6">
                 <FriendlyRemindersChat></FriendlyRemindersChat>
                 </Col>
                 <Col>
                 <List font-size="5">
-                    <ListItem>{{ $t('index.friendly-reminders.tell-fibi-to-remind-you-about-tasks-events-after-picking-up-your-children') }}</ListItem>
+                    <ListItem>{{ $t('index.friendly-reminders.tell-fairy-to-remind-you-about-tasks-events-after-picking-up-your-children') }}</ListItem>
                     <ListItem>{{ $t('index.friendly-reminders.set-reminders-for-any-doctor-appointment') }}<br>{{ $t('index.friendly-reminders.remind-me-about-doctor-events-2-day-in-advance') }}</ListItem>
                 </List>
                 <BBlockquoteFigure>
@@ -231,9 +231,9 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <b-p>
             {{ $t('index.early-access.teaser') }}
             <List>
-                <ListItem>{{ $t('index.early-access.fibi-uses-just-signal-messenger-right-now') }}</ListItem>
-                <ListItem>{{ $t('index.early-access.you-are-willing-to-give-me-feedback-on-your-experience-with-fibi') }}</ListItem>
-                <ListItem>{{ $t('index.early-access.you-are-willing-to-actively-use-fibi') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.fairy-uses-just-signal-messenger-right-now') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.you-are-willing-to-give-me-feedback-on-your-experience-with-fairy') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.you-are-willing-to-actively-use-fairy') }}</ListItem>
             </List>
         </b-p>
         <b-p>
@@ -241,7 +241,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             <List>
                 <ListItem>{{ $t('index.early-access.benefits.a-companion-who-suppots-you') }}</ListItem>
                 <ListItem>{{ $t('index.early-access.benefits.at-least-2-years-free-access') }}</ListItem>
-                <ListItem>{{ $t('index.early-access.benefits.shape-fibi-your-feedback-leads-to-features-you-need') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.benefits.shape-fairy-your-feedback-leads-to-features-you-need') }}</ListItem>
                 <ListItem><em>{{ $t('index.early-access.benefits.lifetime-access-for-significant-support') }}</em></ListItem>
             </List>
         </b-p>
@@ -300,14 +300,14 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             <b-h level="2">{{ $t('index.background.title') }}</b-h>
             <b-p>
                 <Accordion parent>
-                    <AccordionSection :title=" $t('index.background.tab.who-am-i-why-fibi.title') " :active="true">
+                    <AccordionSection :title=" $t('index.background.tab.who-am-i-why-fairy.title') " :active="true">
                         <b-p>
-                            {{ $t('index.background.tab.who-am-i-why-fibi.text') }}
+                            {{ $t('index.background.tab.who-am-i-why-fairy.text') }}
                         </b-p>
                     </AccordionSection>
-                    <AccordionSection :title=" $t('index.background.tab.ongoing-journey-of-fibi.title') ">
+                    <AccordionSection :title=" $t('index.background.tab.ongoing-journey-of-fairy.title') ">
                         <b-p>
-                            {{ $t('index.background.tab.ongoing-journey-of-fibi.text') }}
+                            {{ $t('index.background.tab.ongoing-journey-of-fairy.text') }}
                         </b-p>
                     </AccordionSection>
                 </Accordion>

@@ -11,8 +11,8 @@
 
 <script lang="ts" setup>
 const { author } = defineProps<{ author: string }>()
-const fadeDirection = ref(author === "Fibi" ? "fade-right" : "fade-left")
-const textDirection = ref(author === "Fibi" ? "start" : "end")
+const fadeDirection = ref(author === "Niva" ? "fade-right" : "fade-left")
+const textDirection = ref(author === "Niva" ? "start" : "end")
 </script>
 
 <style scoped>

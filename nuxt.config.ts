@@ -13,8 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap'
   ],
   site: {
-    url: 'https://neurospicy.icu',
-    name: 'Fibi - Your Friendly Companion',
+    url: 'https://neurospicy.icu'
   },
   i18n: {
     locales: [

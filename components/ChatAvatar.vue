@@ -1,6 +1,6 @@
 <template>
-  <b-div v-if="person === 'Fibi'" margin="b-2">
-    <Avatar circle size="xs" img-src="fibi.png" :img-alt="$t('general.avatar.fibi')" /> Fibi
+  <b-div v-if="person === 'Niva'" margin="b-2">
+    <Avatar circle size="xs" img-src="niva.png" :img-alt="$t('general.avatar.fairy')" /> Niva
   </b-div>
   <b-div v-else margin="b-2">
     {{ person }}
