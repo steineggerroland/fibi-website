@@ -8,7 +8,7 @@
           <b-img src="/logo.png" alt="Logo" height="40px" ref="logo" />
           <b-span small margin="x-2">{{ $t('navbar.brand.name') }}</b-span>
         </NavbarBrand>
-        <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom" :title="$t('navbar.toggle-color-mode')">
+        <NavbarNavList margin="s-auto">
           <NavItem>
             <NavLink :to="localePath('/#features')">
               {{ $t('navbar.link.features') }}
@@ -34,7 +34,8 @@
               {{ $t('navbar.link.privacy') }}
             </NavLink>
           </NavItem>
-          <ColorModeNavItemDropdown style="cursor: pointer;" />
+          <ColorModeNavItemDropdown style="cursor: pointer;" toggle="tooltip" placement="bottom"
+          :title="$t('navbar.toggle-color-mode')" />
           <NavItemDropdown>
             <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip"
                 :title="$t('navbar.language')">🌐</span></NavItemDropdownToggle>

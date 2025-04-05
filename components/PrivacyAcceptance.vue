@@ -1,7 +1,7 @@
 <template>
     <b-div display="grid" gap="2" class="privacy-content">
         <Row class="privacy-header">
-            <b-h level="2">{{ $t('privacy.title') }} <b-button v-if="!isPrivacyPolicy" color="light" size="sm" @click="useNecessaryDataOnly">{{ $t('privacy.hide-privacy-settings') }}</b-button></b-h>
+            <b-h level="2" id="privacy-acceptance-settings">{{ $t('privacy.title') }} <b-button v-if="!isPrivacyPolicy" color="light" size="sm" @click="useNecessaryDataOnly">{{ $t('privacy.hide-privacy-settings') }}</b-button></b-h>
             <b-p v-if="!isPrivacyPolicy"><NuxtLink :to="localePath('/privacy-policy')" target="_blank">{{ $t('privacy.privacyPolicy') }}</NuxtLink></b-p>
         </Row>
         <Row class="privacy-option">

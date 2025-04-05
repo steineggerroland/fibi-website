@@ -6,14 +6,37 @@
             </NavbarBrand>
             <NavbarToggler />
             <NavbarCollapse>
-                <NavbarNavList margin="s-auto" toggle="tooltip" placement="bottom"
-                    :title="$t('navbar.toggle-color-mode')">
+                <NavbarNavList margin="s-auto">
                     <NavItem>
-                        <NavLink :to="localePath('/')">{{ $t('navbar.home') }}</NavLink>
+                        <NavLink :to="localePath('/#features')">
+                            {{ $t('navbar.link.features') }}
+                        </NavLink>
                     </NavItem>
-                    <ColorModeNavItemDropdown style="cursor: pointer;" />
+                    <NavItem>
+                        <NavLink :to="localePath('/#earlyAccess')">
+                            {{ $t('navbar.link.early-access') }}
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink :to="localePath('/#contactForm')">
+                            {{ $t('navbar.link.contact') }}
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink :to="localePath('/#about')">
+                            {{ $t('navbar.link.about') }}
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink :to="localePath('/#legalNotice')">
+                            {{ $t('navbar.link.privacy') }}
+                        </NavLink>
+                    </NavItem>
+                    <ColorModeNavItemDropdown style="cursor: pointer;" toggle="tooltip" placement="bottom"
+                    :title="$t('navbar.toggle-color-mode')" />
                     <NavItemDropdown>
-                        <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip" :title="$t('navbar.language')">🌐</span></NavItemDropdownToggle>
+                        <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip"
+                                :title="$t('navbar.language')">🌐</span></NavItemDropdownToggle>
                         <DropdownMenu>
                             <DropdownItem>
                                 <NuxtLink :to="switchLocalePath('de')">Deutsch 🇩🇪</NuxtLink>
@@ -23,6 +46,11 @@
                             </DropdownItem>
                         </DropdownMenu>
                     </NavItemDropdown>
+          <NavItem>
+            <NavLink margin="x-1" color="light" size="sm" href="#privacy-acceptance-settings">
+              🔐
+            </NavLink>
+          </NavItem>
                 </NavbarNavList>
             </NavbarCollapse>
         </Container>
