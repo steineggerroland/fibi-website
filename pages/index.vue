@@ -4,7 +4,9 @@ import { useLocalePath } from '#i18n'
 import { definePageMeta } from '#imports'
 
 definePageMeta({
-    layout: 'landing'
+    layout: 'landing',
+  title: 'Niva – Deine Assistenz, um dich besser zu organisieren',
+  description: 'Für neurodivergente Menschen, die sich im Alltag besser organisieren möchten. Mit sanften Erinnerungen, Routinen und Kalender-Sync.'
 })
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -19,10 +21,10 @@ const scrollToContactForm = () => {
 }
 
 useSeoMeta({
-  title: t('page-title'),
-  ogTitle: t('page-title'),
-  description:  t('page-description'),
-  ogDescription: t('page-description')
+  title: t('index.page.title'),
+  ogTitle: t('index.page.title'),
+  description:  t('index.page.description'),
+  ogDescription: t('index.page.description')
 })
 
 const publicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -44,9 +46,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <HeroRow size="md-10 lg-8" margin="y-5">
             <Container>
                 <b-h level="1" line-height="0" class="display-4 mb-5">
-                    <Avatar circle size="sm" img-src="/niva.png" img-alt="Niva" />
-                    Niva:<br>{{$t('index.properties.prefix')}} <br class="hideOnBig"/><Typed class="text-primary" :strings="[$t('index.properties.day-planner'), $t('index.properties.companion'), $t('index.properties.reminder'), $t('index.properties.companion'), $t('index.properties.assistant')]">
-                    </Typed><br><b-div padding="0" font-size="4">{{$t('index.hero.subtitle')}}</b-div>
+                    <Avatar circle size="lg" img-src="/niva.png" margin="e-2" img-alt="Niva" style="display: inline-block;" />{{$t('index.hero.title')}}
+                    <br><b-div padding="0" font-size="4">{{$t('index.hero.subtitle')}}</b-div>
                 </b-h>
                 <b-p class="mb-1" font-size="5">
                     <b-div flex flex-direction="row" position="relative">
@@ -76,9 +77,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     </div>
     <Background background-color="info-subtle" margin="y-5">
         <Container margin="y-5">
-            <Row invisible>
+            <Row margin="b-4" text-alignment="center">
                 <Col>
                     <h2 id="features">{{ $t('index.features.title') }}</h2>
+                    <hr>
                 </Col>
             </Row>
             <Row columns="1 sm-2 lg-3 xl-4" gutter="5">
