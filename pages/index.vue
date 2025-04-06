@@ -229,7 +229,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 <List font-size="5">
                     <ListItem>{{
                         $t('index.friendly-reminders.tell-fairy-to-remind-you-about-tasks-events-after-picking-up-your-children')
-                        }}</ListItem>
+                    }}</ListItem>
                     <ListItem>{{ $t('index.friendly-reminders.set-reminders-for-any-doctor-appointment') }}<br>{{
                         $t('index.friendly-reminders.remind-me-about-doctor-events-2-day-in-advance') }}</ListItem>
                 </List>
@@ -252,7 +252,7 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             <List>
                 <ListItem>{{ $t('index.early-access.fairy-uses-just-signal-messenger-right-now') }}</ListItem>
                 <ListItem>{{ $t('index.early-access.you-are-willing-to-give-me-feedback-on-your-experience-with-fairy')
-                    }}</ListItem>
+                }}</ListItem>
                 <ListItem>{{ $t('index.early-access.you-are-willing-to-actively-use-fairy') }}</ListItem>
             </List>
         </b-p>
@@ -322,19 +322,13 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     <Background background-color="info-subtle">
         <Container margin="y-5" style="max-width: 768px;" id="about">
             <b-h level="2">{{ $t('index.background.title') }}</b-h>
+            <b-h level="3">{{ $t('index.background.tab.who-am-i-why-fairy.title') }}</b-h>
             <b-p>
-                <Accordion parent>
-                    <AccordionSection :title="$t('index.background.tab.who-am-i-why-fairy.title')" :active="true">
-                        <b-p>
-                            {{ $t('index.background.tab.who-am-i-why-fairy.text') }}
-                        </b-p>
-                    </AccordionSection>
-                    <AccordionSection :title="$t('index.background.tab.ongoing-journey-of-fairy.title')">
-                        <b-p>
-                            {{ $t('index.background.tab.ongoing-journey-of-fairy.text') }}
-                        </b-p>
-                    </AccordionSection>
-                </Accordion>
+                {{ $t('index.background.tab.who-am-i-why-fairy.text') }}
+            </b-p>
+            <b-h level="3">{{ $t('index.background.tab.ongoing-journey-of-fairy.title') }}</b-h>
+            <b-p>
+                {{ $t('index.background.tab.ongoing-journey-of-fairy.text') }}
             </b-p>
         </Container>
     </Background>
