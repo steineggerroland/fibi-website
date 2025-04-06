@@ -68,6 +68,7 @@
   </Navbar>
 
   <slot />
+  <Footer />
 </template>
 <script lang="ts" setup>
 import { NavItem } from '#components';

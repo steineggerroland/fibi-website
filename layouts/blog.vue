@@ -70,6 +70,7 @@
     <Container class="blog-content" ref="content">
         <slot />
     </Container>
+    <Footer />
 </template>
 
 <script lang="ts" setup>

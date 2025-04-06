@@ -59,6 +59,7 @@
     <Container class="py-4">
         <slot />
     </Container>
+    <Footer />
 </template>
 
 <script lang="ts" setup>

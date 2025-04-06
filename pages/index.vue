@@ -338,49 +338,15 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             </b-p>
         </Container>
     </Background>
-    <Background background-color="dark" text-color="light">
-        <Container margin="y-5">
-            <Row>
-                <Col>
-                <b-h id="legalNotice" level="2">{{ $t('legal-notice.title') }}</b-h>
-                <b-p>
-                    Roland Steinegger<br>
-                    Koppoldstr. 1<br>
-                    c/o COCENTER<br>
-                    86551 Aichach
-                </b-p>
-                </Col>
-                <Col>
-                <b-h level="3">{{ $t('legal-notice.contact.title') }}</b-h>
-                <b-h level="4">{{ $t('legal-notice.contact.editorial-responsibility.title') }}</b-h>
-                <b-p>
-                    <br>
-                    Roland Steinegger<br>
-                    <Anchor href="mailto:roland@neurospicy.icu">roland@neurospicy.icu</Anchor><br>
-                    c/o COCENTER<br>
-                    Koppoldstr. 1<br>
-                    86551 Aichach<br>
-                </b-p>
-                </Col>
-                <Col>
-                <b-h level="3">{{ $t('footer.privacy-policy.title') }}</b-h>
-                <b-p>
-                    <NuxtLink :to="localePath('/privacy-policy')">{{ $t('footer.privacy-policy.text') }}</NuxtLink>
-                </b-p>
-                </Col>
-            </Row>
-            <Row>
+    <Background background-color="dark-subtle">
+        <Container>
+            <Row padding="y-2">
                 <b-p id="featuresThatNeedFunding">
                     {{
                         $t('index.footnote.these-are-features-id-love-to-implement-but-that-are-complex-and-need-funding')
                     }}
                 </b-p>
             </Row>
-        </Container>
-    </Background>
-    <Background background-color="dark-subtle">
-        <Container text-alignment="center">
-            {{ $t('footer.copyright') }}
         </Container>
     </Background>
 </template>
