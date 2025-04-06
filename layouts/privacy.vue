@@ -27,11 +27,6 @@
                             {{ $t('navbar.link.about') }}
                         </NavLink>
                     </NavItem>
-                    <NavItem>
-                        <NavLink :to="localePath('/#legalNotice')">
-                            {{ $t('navbar.link.privacy') }}
-                        </NavLink>
-                    </NavItem>
                     <ColorModeNavItemDropdown style="cursor: pointer;" toggle="tooltip" placement="bottom"
                     :title="$t('navbar.toggle-color-mode')" />
                     <NavItemDropdown>
