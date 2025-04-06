@@ -213,5 +213,31 @@
     "vanadium-instructions": "Für Vanadium: Öffnen Sie {link} in einem neuen Tab und aktivieren Sie WebAssembly",
     "ironfix-instructions": "Für IronFix: Öffnen Sie {link} in einem neuen Tab und aktivieren Sie WebAssembly",
     "reload": "Seite neu laden"
+  },
+  "blog": {
+    "organize-yourself": {
+      "title": "Schwer, dich zu organisieren? So findest du Struktur ohne Überforderung",
+      "description": "Lerne, wie du Exekutive Dysfunktion und mentale Erschöpfung überwindest – mit sanften, effektiven Methoden, die zu deinem neurodivergenten Gehirn passen.",
+      "intro": "Du bist nicht allein. Sich selbst zu organisieren kann verdammt schwer sein – besonders wenn dein Kopf sich wie ein Browser mit 42 offenen Tabs anfühlt. Vor allem, wenn du neurodivergent bist.",
+      "why-hard": {
+        "title": "Warum es so schwierig ist",
+        "text": "Exekutive Dysfunktion, mentale Erschöpfung und der Druck, alles „richtig\" zu machen, können dich lähmen. Die meisten Produktivitätstools wurden nicht für Gehirne wie deins gemacht."
+      },
+      "what-helps": {
+        "title": "Was wirklich hilft",
+        "text": "Statt dich mehr anzustrengen, versuch es mal sanfter. Niva hilft dir, dich selbst zu organisieren, indem es dir...",
+        "list": {
+          "break-tasks": "Aufgaben in machbare Schritte aufteilt",
+          "remember-things": "Dinge merkt, damit du es nicht musst",
+          "gentle-nudges": "Dich freundlich erinnert – mit Struktur, nicht mit Druck",
+          "calendar-integration": "Deinen Kalender in deinen Alltag integriert"
+        }
+      },
+      "organize-terms": {
+        "title": "Organisiere dich – auf deine Art",
+        "text": "Struktur muss sich nicht starr anfühlen. Mit Niva fühlt sie sich wie Unterstützung an. Wie jemand, der auf deiner Seite ist. Du hast das verdient."
+      },
+      "cta": "Bereit, Niva auszuprobieren?"
+    }
   }
 }

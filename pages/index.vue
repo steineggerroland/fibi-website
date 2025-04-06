@@ -5,26 +5,26 @@ import { definePageMeta } from '#imports'
 
 definePageMeta({
     layout: 'landing',
-  title: 'Niva – Deine Assistenz, um dich besser zu organisieren',
-  description: 'Für neurodivergente Menschen, die sich im Alltag besser organisieren möchten. Mit sanften Erinnerungen, Routinen und Kalender-Sync.'
+    title: 'Niva - Your Friendly Companion helping you organize yourself',
+    description: 'For neurodivergent people who want to feel more organized and in control. With gentle reminders, routines and calendar sync.'
 })
 const { t } = useI18n()
 const localePath = useLocalePath()
 
 const scrollToContactForm = () => {
-  setTimeout(() => {
-    const element = document.getElementById('contactForm')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, 100)
+    setTimeout(() => {
+        const element = document.getElementById('contactForm')
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, 100)
 }
 
 useSeoMeta({
-  title: t('index.page.title'),
-  ogTitle: t('index.page.title'),
-  description:  t('index.page.description'),
-  ogDescription: t('index.page.description')
+    title: t('index.page.title'),
+    ogTitle: t('index.page.title'),
+    description: t('index.page.description'),
+    ogDescription: t('index.page.description')
 })
 
 const publicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -46,23 +46,29 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <HeroRow size="md-10 lg-8" margin="y-5">
             <Container>
                 <b-h level="1" line-height="0" class="display-4 mb-5">
-                    <Avatar circle size="lg" img-src="/niva.png" margin="e-2" img-alt="Niva" style="display: inline-block;" />{{$t('index.hero.title')}}
-                    <br><b-div padding="0" font-size="4">{{$t('index.hero.subtitle')}}</b-div>
+                    <Avatar circle size="lg" img-src="/niva.png" margin="e-2" img-alt="Niva"
+                        style="display: inline-block;" />{{ $t('index.hero.title') }}
+                    <br><b-div padding="0" font-size="4">{{ $t('index.hero.subtitle') }}</b-div>
                 </b-h>
                 <b-p class="mb-1" font-size="5">
                     <b-div flex flex-direction="row" position="relative">
                         <b-div margin="e-3">{{ $t('index.hero.features.prefix-with-dots') }}</b-div>
                         <b-div>
                             <List unstyled>
-                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.reminds-you-to-note-tasks') }}
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{
+                                    $t('index.hero.features.reminds-you-to-note-tasks') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.keeps-track-of-your-calendar') }}
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{
+                                    $t('index.hero.features.keeps-track-of-your-calendar') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.helps-you-create-small-doable-tasks') }}
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{
+                                    $t('index.hero.features.helps-you-create-small-doable-tasks') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.uses-your-favorite-messenger') }}
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{
+                                    $t('index.hero.features.uses-your-favorite-messenger') }}
                                 </ListItem>
-                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{ $t('index.hero.features.understands-everyday-language') }}
+                                <ListItem><b-div visually-hidden>{{ $t('index.hero.features.prefix') }} </b-div>{{
+                                    $t('index.hero.features.understands-everyday-language') }}
                                 </ListItem>
                             </List>
                         </b-div>
@@ -70,7 +76,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </b-p>
             </Container>
             <Container margin="y-2">
-                <NuxtLink :to="{ path: localePath('/'), hash: '#contactForm', query: { startConversation: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg" padding="y-3 x-5"
+                <NuxtLink :to="{ path: localePath('/'), hash: '#contactForm', query: { startConversation: 'true' } }"
+                    @click="scrollToContactForm"><b-button color="primary" size="lg" padding="y-3 x-5"
                         font-weight="light" font-size="2">{{ $t('index.hero.start-chat') }}</b-button></NuxtLink>
             </Container>
         </HeroRow>
@@ -79,8 +86,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
         <Container margin="y-5">
             <Row margin="b-4" text-alignment="center">
                 <Col>
-                    <h2 id="features">{{ $t('index.features.title') }}</h2>
-                    <hr>
+                <h2 id="features">{{ $t('index.features.title') }}</h2>
+                <hr>
                 </Col>
             </Row>
             <Row columns="1 sm-2 lg-3 xl-4" gutter="5">
@@ -126,7 +133,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             <Col>
             <List font-size="5">
                 <ListItem>{{ $t('index.morning-routine.get-up-to-date-information-weather-appointments') }}</ListItem>
-                <ListItem>{{ $t('index.morning-routine.walk-through-your-planned-routine-breakfast-shower') }}</ListItem>
+                <ListItem>{{ $t('index.morning-routine.walk-through-your-planned-routine-breakfast-shower') }}
+                </ListItem>
                 <ListItem>{{ $t('index.morning-routine.start-the-day-with-a-well-prepared-structure') }}</ListItem>
             </List>
             <BBlockquoteFigure>
@@ -156,7 +164,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 <Col>
                 <List font-size="5">
                     <ListItem>{{ $t('index.taskCalendarSync.fairy-looks-for-unusual-events') }}</ListItem>
-                    <ListItem>{{ $t('index.taskCalendarSync.get-answers-to-when-is-my-next-doctor-appointment') }}</ListItem>
+                    <ListItem>{{ $t('index.taskCalendarSync.get-answers-to-when-is-my-next-doctor-appointment') }}
+                    </ListItem>
                     <ListItem>{{ $t('index.taskCalendarSync.block-time-slots-for-tasks') }}</ListItem>
                     <ListItem>{{ $t('index.taskCalendarSync.split-big-tasks-with-help-by-fairy') }}</ListItem>
                 </List>
@@ -218,8 +227,11 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 </Col>
                 <Col>
                 <List font-size="5">
-                    <ListItem>{{ $t('index.friendly-reminders.tell-fairy-to-remind-you-about-tasks-events-after-picking-up-your-children') }}</ListItem>
-                    <ListItem>{{ $t('index.friendly-reminders.set-reminders-for-any-doctor-appointment') }}<br>{{ $t('index.friendly-reminders.remind-me-about-doctor-events-2-day-in-advance') }}</ListItem>
+                    <ListItem>{{
+                        $t('index.friendly-reminders.tell-fairy-to-remind-you-about-tasks-events-after-picking-up-your-children')
+                        }}</ListItem>
+                    <ListItem>{{ $t('index.friendly-reminders.set-reminders-for-any-doctor-appointment') }}<br>{{
+                        $t('index.friendly-reminders.remind-me-about-doctor-events-2-day-in-advance') }}</ListItem>
                 </List>
                 <BBlockquoteFigure>
                     <BBlockquote>
@@ -239,7 +251,8 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             {{ $t('index.early-access.teaser') }}
             <List>
                 <ListItem>{{ $t('index.early-access.fairy-uses-just-signal-messenger-right-now') }}</ListItem>
-                <ListItem>{{ $t('index.early-access.you-are-willing-to-give-me-feedback-on-your-experience-with-fairy') }}</ListItem>
+                <ListItem>{{ $t('index.early-access.you-are-willing-to-give-me-feedback-on-your-experience-with-fairy')
+                    }}</ListItem>
                 <ListItem>{{ $t('index.early-access.you-are-willing-to-actively-use-fairy') }}</ListItem>
             </List>
         </b-p>
@@ -248,12 +261,16 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             <List>
                 <ListItem>{{ $t('index.early-access.benefits.a-companion-who-suppots-you') }}</ListItem>
                 <ListItem>{{ $t('index.early-access.benefits.at-least-2-years-free-access') }}</ListItem>
-                <ListItem>{{ $t('index.early-access.benefits.shape-fairy-your-feedback-leads-to-features-you-need') }}</ListItem>
-                <ListItem><em>{{ $t('index.early-access.benefits.lifetime-access-for-significant-support') }}</em></ListItem>
+                <ListItem>{{ $t('index.early-access.benefits.shape-fairy-your-feedback-leads-to-features-you-need') }}
+                </ListItem>
+                <ListItem><em>{{ $t('index.early-access.benefits.lifetime-access-for-significant-support') }}</em>
+                </ListItem>
             </List>
         </b-p>
         <b-p>
-            <NuxtLink :to="{ path: localePath('/'), hash: '#contactForm', query: { joinBeta: 'true' } }" @click="scrollToContactForm"><b-button color="primary" size="lg">{{ $t('index.early-access.call-to-action') }}</b-button></NuxtLink>
+            <NuxtLink :to="{ path: localePath('/'), hash: '#contactForm', query: { joinBeta: 'true' } }"
+                @click="scrollToContactForm"><b-button color="primary" size="lg">{{
+                    $t('index.early-access.call-to-action') }}</b-button></NuxtLink>
         </b-p>
         <b-p>
             <NuxtLink :to="localePath('/#about')">{{ $t('index.early-access.further-information') }}</NuxtLink>
@@ -307,12 +324,12 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
             <b-h level="2">{{ $t('index.background.title') }}</b-h>
             <b-p>
                 <Accordion parent>
-                    <AccordionSection :title=" $t('index.background.tab.who-am-i-why-fairy.title') " :active="true">
+                    <AccordionSection :title="$t('index.background.tab.who-am-i-why-fairy.title')" :active="true">
                         <b-p>
                             {{ $t('index.background.tab.who-am-i-why-fairy.text') }}
                         </b-p>
                     </AccordionSection>
-                    <AccordionSection :title=" $t('index.background.tab.ongoing-journey-of-fairy.title') ">
+                    <AccordionSection :title="$t('index.background.tab.ongoing-journey-of-fairy.title')">
                         <b-p>
                             {{ $t('index.background.tab.ongoing-journey-of-fairy.text') }}
                         </b-p>
@@ -350,11 +367,13 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 <b-p>
                     <NuxtLink :to="localePath('/privacy-policy')">{{ $t('footer.privacy-policy.text') }}</NuxtLink>
                 </b-p>
-                </Col>  
+                </Col>
             </Row>
             <Row>
                 <b-p id="featuresThatNeedFunding">
-                    {{ $t('index.footnote.these-are-features-id-love-to-implement-but-that-are-complex-and-need-funding') }}
+                    {{
+                        $t('index.footnote.these-are-features-id-love-to-implement-but-that-are-complex-and-need-funding')
+                    }}
                 </b-p>
             </Row>
         </Container>
@@ -377,9 +396,10 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     background-position: right;
     background-image: url("../assets/hero_background.png");
 }
+
 @media (min-width:1562px) {
-.hideOnBig {
-    display: none;
-}
+    .hideOnBig {
+        display: none;
+    }
 }
 </style>

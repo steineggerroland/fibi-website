@@ -62,9 +62,6 @@
 </template>
 
 <script lang="ts" setup>
-import { NavItem } from '#components'
-
-const { t } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
 </script>

@@ -206,5 +206,31 @@
       "text": "More information can be found in our privacy policy."
     },
     "copyright": "© 2025 Roland Steinegger"
+  },
+  "blog": {
+    "organize-yourself": {
+      "title": "Struggling to Stay Organized? Here's How to Regain Structure Without Overwhelm",
+      "description": "Discover how to overcome executive dysfunction and mental fatigue with gentle, effective organization strategies that work with your brain, not against it.",
+      "intro": "It's not just you. Organizing yourself can be incredibly hard when your brain feels like a browser with 42 tabs open – especially if you're neurodivergent.",
+      "why-hard": {
+        "title": "Why It Feels So Hard",
+        "text": "Executive dysfunction, mental fatigue, and the pressure of doing everything \"the right way\" can leave you frozen. Most productivity tools weren't built for brains like yours."
+      },
+      "what-helps": {
+        "title": "What Actually Helps",
+        "text": "Instead of pushing harder, try going softer. Niva helps you organize yourself by...",
+        "list": {
+          "break-tasks": "Breaking tasks into doable pieces",
+          "remember-things": "Remembering things so you don't have to",
+          "gentle-nudges": "Gently nudging you with structure, not shame",
+          "calendar-integration": "Integrating your calendar into your routine"
+        }
+      },
+      "organize-terms": {
+        "title": "Organize Yourself – On Your Terms",
+        "text": "Structure doesn't have to feel rigid. With Niva, it can feel like support. Like someone on your side. You deserve that."
+      },
+      "cta": "Ready to try Niva?"
+    }
   }
 }

@@ -100,12 +100,12 @@ onMounted(() => {
     let observer = new IntersectionObserver(entries => {
       if (entries[0].boundingClientRect.y < 0) {
         navbar.value?.$el.classList.remove("top-of-site");
-        navbar.value!.$el.classList.add("bg-opacity-25");
-        navbar.value!.$el.classList.remove("bg-opacity-50");
+        navbar.value?.$el.classList.add("bg-opacity-25");
+        navbar.value?.$el.classList.remove("bg-opacity-50");
       } else {
         navbar.value?.$el.classList.add("top-of-site");
-        navbar.value!.$el.classList.remove("bg-opacity-25");
-        navbar.value!.$el.classList.add("bg-opacity-50");
+        navbar.value?.$el.classList.remove("bg-opacity-25");
+        navbar.value?.$el.classList.add("bg-opacity-50");
       }
     });
     observer.observe(topOfSiteIndicatorPixel.value!);
@@ -113,26 +113,37 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.navbar.top-of-site {
+    .navbar-brand {
+        opacity: 0;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        opacity: 0.8;
+    }
+}
+
 .navbar {
-  transition: all 500ms ease-in;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
-}
+    transition: all 500ms ease-in;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 
-.navbar-brand {
-  text-decoration: none;
-  transition: opacity 500ms ease-in;
-  opacity: 1;
-}
+    .navbar-brand {
+        text-decoration: none;
+        transition: opacity 500ms ease-in;
+        opacity: 1;
+    }
 
-.navbar.top-of-site .navbar-brand:hover {
-  opacity: 0.8;
-}
+    .navbar-brand img {
+        transition: transform 250ms ease-in;
+    }
 
-.navbar.top-of-site .navbar-brand {
-  opacity: 0;
+    .navbar-brand:hover img,
+    .navbar-brand:focus img {
+        transform: scale(1.1);
+    }
 }
-
 
 #top-of-site-indicator-pixel {
   position: absolute;
