@@ -66,26 +66,13 @@
             <div id="top-of-site-indicator-pixel" ref="topOfSiteIndicatorPixel"></div>
         </Teleport>
     </Navbar>
-    <b-div ref="content">
+    <Container ref="content">
         <slot />
-    </b-div>
+    </Container>
     <Footer />
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-    title: 'Niva Blog – Gentle Tools & Guidance to Help You Organize Yourself',
-    description: 'Discover blog posts designed for neurodivergent minds. From soft routines to executive function tips, Niva helps you organize yourself with care and clarity.'
-})
-
-const { t } = useI18n()
-useSeoMeta({
-    title: t('blog.page.title'),
-    ogTitle: t('blog.page.title'),
-    description: t('blog.page.description'),
-    ogDescription: t('blog.page.description')
-})
-
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
 const privacyAcceptance = ref<{ hide: () => void; show: () => void } | null>(null)
@@ -128,7 +115,7 @@ onMounted(() => {
         navbar.value?.$el.classList.add("bg-opacity-25");
         navbar.value?.$el.classList.remove("bg-opacity-50");
     }
-    
+
     const adaptToWindowHeight = () => {
         const isSpaceForScrolling = contentHeight.value / windowHeight.value > 1.5
         if (!isSpaceForScrolling) {

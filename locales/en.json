@@ -195,6 +195,7 @@
     "link": {
       "features": "Features",
       "early-access": "Early Access",
+      "blog": "Blog",
       "contact": "Contact",
       "about": "About",
       "privacy": "Legal Notice"
@@ -208,6 +209,10 @@
     "copyright": "© 2025 Roland Steinegger"
   },
   "blog": {
+    "page": {
+      "title": "Niva Blog – Gentle Tools & Guidance to Help You Organize Yourself",
+      "description": "Discover blog posts designed for neurodivergent minds. From soft routines to executive function tips, Niva helps you organize yourself with care and clarity."
+    },
     "organize-yourself": {
       "title": "Struggling to Stay Organized? Here's How to Regain Structure Without Overwhelm",
       "description": "Discover how to overcome executive dysfunction and mental fatigue with gentle, effective organization strategies that work with your brain, not against it.",
@@ -231,6 +236,23 @@
         "text": "Structure doesn't have to feel rigid. With Niva, it can feel like support. Like someone on your side. You deserve that."
       },
       "cta": "Ready to try Niva?"
+    },
+    "overview": {
+      "title": "Niva Blog – Organize Yourself, Gently",
+      "description": "Explore stories, strategies, and soft structure for neurodivergent minds. Written with care, not pressure.",
+      "filter-by-tag": "Filter by Tag:",
+      "all-posts": "All Posts",
+      "loading": "Loading...",
+      "error": "Error loading blog posts: {error}",
+      "no-posts": "No blog posts found"
+    },
+    "post": {
+      "back-to-blog": "Back to Blog",
+      "post-not-found": "Post not found",
+      "author": "Author:",
+      "published": "Published:",
+      "related-articles": "Related Articles",
+      "popular-tags": "Popular Tags"
     }
   }
 }

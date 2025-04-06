@@ -20,6 +20,11 @@
             </NavLink>
           </NavItem>
           <NavItem>
+            <NavLink :to="localePath('/blog')">
+              {{ $t('navbar.link.blog') }}
+            </NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink :to="localePath('/#contactForm')">
               {{ $t('navbar.link.contact') }}
             </NavLink>

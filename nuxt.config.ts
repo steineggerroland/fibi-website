@@ -10,11 +10,9 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
     'usebootstrap',
     '@nuxtjs/i18n',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxt/content'
   ],
-  site: {
-    url: 'https://neurospicy.icu'
-  },
   i18n: {
     locales: [
       {
@@ -37,6 +35,11 @@ export default defineNuxtConfig({
     vueI18n: '../i18n.config.ts',
     bundle: {
       optimizeTranslationDirective: false,
+    }
+  },
+  content: {
+    navigation: {
+      fields: ['title', 'description', 'date', 'author', 'tags']
     }
   },
   router: {
@@ -67,7 +70,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0' }
       ]
     }
   }

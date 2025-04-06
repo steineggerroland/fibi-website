@@ -195,6 +195,7 @@
     "link": {
       "features": "Features",
       "early-access": "Early Access",
+      "blog": "Blog",
       "contact": "Kontakt",
       "about": "Über Niva",
       "privacy": "Impressum"
@@ -215,29 +216,50 @@
     "reload": "Seite neu laden"
   },
   "blog": {
+    "page": {
+      "title": "Niva Blog – Sanfte Unterstützung, um dich besser zu organisieren",
+      "description": "Unser Blog bietet Tipps und Tools für neurodivergente Menschen, die sich mehr Struktur wünschen – ohne Druck, aber mit Klarheit und Verständnis."
+    },
     "organize-yourself": {
-      "title": "Schwer, dich zu organisieren? So findest du Struktur ohne Überforderung",
-      "description": "Lerne, wie du Exekutive Dysfunktion und mentale Erschöpfung überwindest – mit sanften, effektiven Methoden, die zu deinem neurodivergenten Gehirn passen.",
-      "intro": "Du bist nicht allein. Sich selbst zu organisieren kann verdammt schwer sein – besonders wenn dein Kopf sich wie ein Browser mit 42 offenen Tabs anfühlt. Vor allem, wenn du neurodivergent bist.",
+      "title": "Schwierigkeiten bei der Organisation? So findest du wieder Struktur ohne Überforderung",
+      "description": "Entdecke, wie du Exekutivfunktionsstörungen und mentale Erschöpfung mit sanften, effektiven Organisationsstrategien überwinden kannst, die mit deinem Gehirn arbeiten, nicht dagegen.",
+      "intro": "Es liegt nicht nur an dir. Sich zu organisieren kann unglaublich schwer sein, wenn sich dein Gehirn anfühlt wie ein Browser mit 42 offenen Tabs – besonders wenn du neurodivergent bist.",
       "why-hard": {
-        "title": "Warum es so schwierig ist",
-        "text": "Exekutive Dysfunktion, mentale Erschöpfung und der Druck, alles „richtig\" zu machen, können dich lähmen. Die meisten Produktivitätstools wurden nicht für Gehirne wie deins gemacht."
+        "title": "Warum es sich so schwer anfühlt",
+        "text": "Exekutivfunktionsstörungen, mentale Erschöpfung und der Druck, alles \"richtig\" zu machen, können dich lähmen. Die meisten Produktivitätstools wurden nicht für Gehirne wie deines entwickelt."
       },
       "what-helps": {
         "title": "Was wirklich hilft",
-        "text": "Statt dich mehr anzustrengen, versuch es mal sanfter. Niva hilft dir, dich selbst zu organisieren, indem es dir...",
+        "text": "Anstatt härter zu pushen, versuche es sanfter. Niva hilft dir bei der Organisation, indem sie...",
         "list": {
-          "break-tasks": "Aufgaben in machbare Schritte aufteilt",
-          "remember-things": "Dinge merkt, damit du es nicht musst",
-          "gentle-nudges": "Dich freundlich erinnert – mit Struktur, nicht mit Druck",
-          "calendar-integration": "Deinen Kalender in deinen Alltag integriert"
+          "break-tasks": "Aufgaben in machbare Teile aufteilt",
+          "remember-things": "Sich um Dinge kümmert, damit du es nicht musst",
+          "gentle-nudges": "Dich sanft mit Struktur unterstützt, nicht mit Scham",
+          "calendar-integration": "Deinen Kalender in deine Routine integriert"
         }
       },
       "organize-terms": {
-        "title": "Organisiere dich – auf deine Art",
-        "text": "Struktur muss sich nicht starr anfühlen. Mit Niva fühlt sie sich wie Unterstützung an. Wie jemand, der auf deiner Seite ist. Du hast das verdient."
+        "title": "Organisiere dich – nach deinen Regeln",
+        "text": "Struktur muss sich nicht starr anfühlen. Mit Niva kann sie sich wie Unterstützung anfühlen. Wie jemand, der auf deiner Seite ist. Das hast du verdient."
       },
-      "cta": "Bereit, Niva auszuprobieren?"
+      "cta": "Bereit, Niva zu probieren?"
+    },
+    "overview": {
+      "title": "Niva Blog – Organisiere dich sanft",
+      "description": "Entdecke Geschichten, Strategien und weiche Strukturen für neurodivergente Gehirne. Geschrieben mit Sorgfalt, nicht mit Druck.",
+      "filter-by-tag": "Nach Tag filtern:",
+      "all-posts": "Alle Beiträge",
+      "loading": "Lädt...",
+      "error": "Fehler beim Laden der Blogbeiträge: {error}",
+      "no-posts": "Keine Blogbeiträge gefunden"
+    },
+    "post": {
+      "back-to-blog": "Zurück zum Blog",
+      "post-not-found": "Beitrag nicht gefunden",
+      "author": "Autor:",
+      "published": "Veröffentlicht:",
+      "related-articles": "Ähnliche Artikel",
+      "popular-tags": "Beliebte Tags"
     }
   }
 }
