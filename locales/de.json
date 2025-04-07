@@ -189,6 +189,7 @@
     "toggle-privacy-settings": "Datenschutzeinstellungen anzeigen/verbergen",
     "toggle-color-mode": "Farbschema wechseln",
     "language": "Sprache / Language",
+    "privacy-settings": "Datenschutzeinstellungen",
     "brand": {
       "name": "Niva"
     },
