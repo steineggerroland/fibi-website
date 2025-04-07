@@ -2,15 +2,16 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-25',
   devtools: { enabled: true },
+  site: { url: 'https://neurospicy.icu', name: 'Niva - Your Friendly Companion helping you organize yourself' },
   modules: [
     '@nuxt/eslint',
+    '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxtjs/mdc',
     'usebootstrap',
-    '@nuxtjs/i18n',
-    '@nuxtjs/sitemap',
     '@nuxt/content'
   ],
   i18n: {
@@ -35,11 +36,6 @@ export default defineNuxtConfig({
     vueI18n: '../i18n.config.ts',
     bundle: {
       optimizeTranslationDirective: false,
-    }
-  },
-  content: {
-    navigation: {
-      fields: ['title', 'description', 'date', 'author', 'tags']
     }
   },
   router: {
