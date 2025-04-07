@@ -35,8 +35,8 @@
           <b-h level="2" margin="b-1">{{ post.title }}</b-h>
           <b-p text-color="secondary">{{ post.description }}</b-p>
           <b-div v-if="post.tags && post.tags.length" margin="t-2">
-            <Badge v-for="(tag, index) in post.tags" :key="tag" color="secondary" padding="y-1 x-2" rounded margin="e-1">
-              {{ tag }}{{ index < post.tags.length - 1 ? ', ' : '' }}
+            <Badge v-for="(tag) in post.tags" :key="tag" color="secondary" padding="y-1 x-2" rounded margin="e-1">
+              {{ tag }}
           </Badge>
           </b-div>
         </NuxtLink>
@@ -79,7 +79,7 @@ watch(() => route.query.tag, () => {
 })
 
 
-const { data: posts, pending, error } = await useAsyncData('blog-posts', async () => {
+const { data: posts, pending, error } = await useAsyncData('blog', async () => {
   try {
     // Query only posts for the current language
     const result = await queryContent('blog')
