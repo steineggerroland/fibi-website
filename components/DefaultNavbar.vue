@@ -80,10 +80,6 @@
         </Container>
     </Navbar>
     <Teleport to="body">
-        <Container fixed="bottom" background-color="body">
-            is collapsed: {{ isCollapsed }}
-            highlight navbar: {{ highlightNavbar }}
-        </Container>
         <div id="top-of-site-indicator-pixel"></div>
     </Teleport>
 </template>

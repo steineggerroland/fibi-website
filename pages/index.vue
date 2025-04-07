@@ -4,11 +4,16 @@ import { useLocalePath } from '#i18n'
 import { definePageMeta } from '#imports'
 
 definePageMeta({
-    layout: 'landing',
-    title: 'Niva - Your Friendly Companion helping you organize yourself',
-    description: 'For neurodivergent people who want to feel more organized and in control. With gentle reminders, routines and calendar sync.'
+    layout: 'landing'
 })
 const { t } = useI18n()
+useSeoMeta({
+    title: t('index.page.title'),
+    ogTitle: t('index.page.title'),
+    description: t('index.page.description'),
+    ogDescription: t('index.page.description')
+})
+
 const localePath = useLocalePath()
 
 const scrollToContactForm = () => {

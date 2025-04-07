@@ -1,5 +1,5 @@
 <template>
-    <NavbarContainer :content-height="contentHeight" />
+    <DefaultNavbar :content-height="contentHeight" />
     <b-div ref="content">
         <slot />
     </b-div>
@@ -23,15 +23,3 @@ useSeoMeta({
 const content = useTemplateRef('content')
 const { height: contentHeight } = useElementSize(content)
 </script>
-
-<style scoped lang="scss">
-#top-of-site-indicator-pixel {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    top: 90vh;
-    left: 0;
-    background-color: transparent;
-    z-index: -1;
-}
-</style>
