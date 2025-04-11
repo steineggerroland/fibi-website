@@ -15,30 +15,37 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
   ],
+  image: {
+    quality: 80,
+    format: ['webp'],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536
+    },
+    presets: {
+      hero: {
+        modifiers: {
+          format: 'webp',
+          quality: 80
+        }
+      }
+    }
+  },
   site: { url: 'https://neurospicy.icu', name: 'Niva - Your Friendly Companion helping you organize yourself' },
   routeRules: {
     '/': { redirect: '/de' },
     '/index.html': { redirect: '/de' },
-    '/en/blog/25-03-22-welcome': { prerender: true },
-    '/en/blog/25-03-28-organize-yourself': { prerender: true },
-    '/en/blog/25-04-02-autism-awareness-day': { prerender: true },
-    '/en/blog/25-04-03-organize-with-adhd': { prerender: true },
-    '/en/blog/25-04-06-neurodivergent-routine': { prerender: true },
-    '/de/blog/25-03-22-willkommen': { prerender: true },
-    '/de/blog/25-03-28-organisiere-dich': { prerender: true },
-    '/de/blog/25-04-02-autismus-tag': { prerender: true },
-    '/de/blog/25-04-03-organisiert-mit-adhs': { prerender: true },
-    '/de/blog/25-04-06-neurodivergente-routinen': { prerender: true },
-    '/de/blog/25-03-22-welcome': { prerender: false },
-    '/de/blog/25-03-28-organize-yourself': { prerender: false },
-    '/de/blog/25-04-02-autism-awareness-day': { prerender: false },
-    '/de/blog/25-04-03-organize-with-adhd': { prerender: false },
-    '/de/blog/25-04-06-neurodivergent-routine': { prerender: false },
-    '/en/blog/25-03-22-willkommen': { prerender: false },
-    '/en/blog/25-03-28-organisiere-dich': { prerender: false },
-    '/en/blog/25-04-02-autismus-tag': { prerender: false },
-    '/en/blog/25-04-03-organisiert-mit-adhs': { prerender: false },
-    '/en/blog/25-04-06-neurodivergente-routinen': { prerender: false }
+    '__nuxt_content/blog/sql_dump': {prerender: false},
+    '__nuxt_content/blogPages/sql_dump': {prerender: false},
+    '/de/actions/startConversation': {prerender: false},
+    '/de/actions/joinBeta': {prerender: false},
+    '/en/actions/startConversation': {prerender: false},
+    '/en/actions/joinBeta': {prerender: false},
   },
   i18n: {
     locales: [

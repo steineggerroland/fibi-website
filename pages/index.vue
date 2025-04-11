@@ -48,6 +48,17 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
 </script>
 <template>
     <div class="hero">
+        <div class="hero-background">
+            <NuxtImg
+                src="/hero_background.png"
+                preset="hero"
+                sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
+                class="hero-image"
+                alt="Hero background"
+                loading="eager"
+                height="800"
+            />
+        </div>
         <HeroRow size="md-10 lg-8" margin="y-5">
             <Container>
                 <b-h level="1" line-height="0" class="display-4 mb-5">
@@ -356,10 +367,24 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-image: url("../assets/hero_background.png");
+    position: relative;
+    min-height: 800px;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right;
 }
 
 @media (min-width:1562px) {
