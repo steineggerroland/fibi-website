@@ -16,13 +16,6 @@ export default defineContentConfig({
                     date: z.date()
                 }),
             })
-        ),
-        blogPages: defineCollection({
-            type: 'page',
-            source: {
-                include: '*/blog/*.md',
-                prefix: '/blog/'
-            },
-        })
+        )
     },
 })

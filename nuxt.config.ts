@@ -37,15 +37,18 @@ export default defineNuxtConfig({
     }
   },
   site: { url: 'https://neurospicy.icu', name: 'Niva - Your Friendly Companion helping you organize yourself' },
+  sitemap: {
+    exclude: [
+      '/__nuxt_content/blog/sql_dump',
+      '/de/actions/startConversation',
+      '/de/actions/joinBeta',
+      '/en/actions/startConversation',
+      '/en/actions/joinBeta'
+    ]
+  },
   routeRules: {
     '/': { redirect: '/de' },
-    '/index.html': { redirect: '/de' },
-    '__nuxt_content/blog/sql_dump': {prerender: false},
-    '__nuxt_content/blogPages/sql_dump': {prerender: false},
-    '/de/actions/startConversation': {prerender: false},
-    '/de/actions/joinBeta': {prerender: false},
-    '/en/actions/startConversation': {prerender: false},
-    '/en/actions/joinBeta': {prerender: false},
+    '/index.html': { redirect: '/de' }
   },
   i18n: {
     locales: [
