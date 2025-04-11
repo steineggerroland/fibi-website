@@ -5,7 +5,17 @@
         <Container>
             <NavbarBrand :to="localePath('/')" class="navbar-brand"
                 :style="{ opacity: highlightNavbar ? 1 : showBrand ? 1 : 0 }">
-                <b-img src="/logo.png" alt="Logo" height="40px" ref="logo" />
+                <NuxtImg
+                    src="/logo.png"
+                    width="40"
+                    height="40"
+                    format="webp"
+                    quality="80"
+                    alt="Logo"
+                    ref="logo"
+                    sizes="40px"
+                    densities="x1 x2 x3"
+                />
                 <b-span small margin="x-2">{{ $t('navbar.brand.name') }}</b-span>
             </NavbarBrand>
             <NavbarToggler target="#navbar-collapse" margin="s-auto" style="cursor: pointer;" ref="navbarToggler" />

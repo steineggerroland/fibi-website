@@ -1,10 +1,30 @@
 <template>
   <b-div v-if="person === 'Niva'" margin="b-2">
-    <Avatar circle size="xs" img-src="niva.png" :img-alt="$t('general.avatar.fairy')" /> Niva
+    <NuxtImg
+      src="/niva.png"
+      width="32"
+      height="32"
+      format="webp"
+      quality="80"
+      loading="lazy"
+      :alt="$t('general.avatar.fairy')"
+      class="rounded-circle me-2"
+      sizes="32px"
+    /> Niva
   </b-div>
   <b-div v-else margin="b-2">
     {{ person }}
-    <Avatar circle size="xs" img-src="you.png" :img-alt="$t('general.avatar.sloth')" />
+    <NuxtImg
+      src="/you.png"
+      width="32"
+      height="32"
+      format="webp"
+      quality="95"
+      loading="lazy"
+      :alt="$t('general.avatar.sloth')"
+      class="rounded-circle me-2"
+      sizes="32px"
+    />
   </b-div>
 </template>
 

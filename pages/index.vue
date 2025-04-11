@@ -2,6 +2,9 @@
 import { useI18n } from 'vue-i18n'
 import { useLocalePath } from '#i18n'
 import { definePageMeta } from '#imports'
+import { useNuxtApp } from '#app'
+import { computed } from 'vue'
+import { useImage } from '#imports'
 
 definePageMeta({
     layout: 'landing'
@@ -24,6 +27,17 @@ const scrollToContactForm = () => {
         }
     }, 100)
 }
+
+// Get the optimized image URL
+const { getImage } = useImage()
+const optimizedNivaImage = computed(() => {
+    return getImage('/niva.png', {
+        width: 64,
+        height: 64,
+        format: 'webp',
+        quality: 80
+    }).url
+})
 
 useSeoMeta({
     title: t('index.page.title'),
@@ -54,16 +68,30 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
                 preset="hero"
                 sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
                 class="hero-image"
-                alt="Hero background"
+                :alt="$t('index.hero.background-alt')"
                 loading="eager"
-                height="800"
+                fit="contain"
+                preload
+                densities="x1 x2"
             />
         </div>
         <HeroRow size="md-10 lg-8" margin="y-5">
             <Container>
                 <b-h level="1" line-height="0" class="display-4 mb-5">
-                    <Avatar circle size="lg" img-src="/niva.png" margin="e-2" img-alt="Niva"
-                        style="display: inline-block;" />{{ $t('index.hero.title') }}
+                    <NuxtImg
+                        src="/niva.png"
+                        width="100%"
+                        height="100%"
+                        format="webp"
+                        quality="80"
+                        alt="Niva"
+                        class="rounded-circle me-2"
+                        style="display: inline-block; width: 32px; height: 32px;"
+                        sizes="xs:32px sm:40px md:48px lg:56px xl:64px"
+                        densities="x1 x2"
+                        preload
+                        placeholder
+                    />{{ $t('index.hero.title') }}
                     <br><b-div padding="0" font-size="4">{{ $t('index.hero.subtitle') }}</b-div>
                 </b-h>
                 <b-p class="mb-1" font-size="5">
@@ -390,6 +418,35 @@ BQkB4TOAAhsMAAoJEEtPp7EasaLjzQ8A/izL/Mi1LR15DAGgNgV/hiIYWvIfzDBi
 @media (min-width:1562px) {
     .hideOnBig {
         display: none;
+    }
+}
+
+/* Responsive image sizing */
+@media (min-width: 576px) {
+    .rounded-circle {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .rounded-circle {
+        width: 48px !important;
+        height: 48px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .rounded-circle {
+        width: 56px !important;
+        height: 56px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .rounded-circle {
+        width: 64px !important;
+        height: 64px !important;
     }
 }
 </style>
