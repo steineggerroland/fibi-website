@@ -7,7 +7,7 @@ export default defineContentConfig({
             // adds the robots frontmatter key to the collection
             asSitemapCollection({
                 type: 'page',
-                source: 'blog/**/*.md',
+                source: '*/blog/*.md',
                 schema: z.object({
                     tags: z.array(z.string()),
                     title: z.string(),
@@ -17,5 +17,12 @@ export default defineContentConfig({
                 }),
             })
         ),
+        blogPages: defineCollection({
+            type: 'page',
+            source: {
+                include: '*/blog/*.md',
+                prefix: '/blog/'
+            },
+        })
     },
 })

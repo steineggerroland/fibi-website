@@ -4,17 +4,17 @@
   "back-to-top": "Nach oben",
   "index.page.title": "Niva – Deine Assistenz, um dich besser zu organisieren",
   "index.page.description": "Für neurodivergente Menschen, die sich im Alltag besser organisieren möchten. Mit sanften Erinnerungen, Routinen und Kalender-Sync.",
-  "index.hero.title": "Deine Assistenz, um dich besser zu organisieren",
-  "index.hero.subtitle": "Für alle, die mit Fokus, Planung oder Struktur kämpfen – besonders bei ADHS oder Autismus.",
+  "index.hero.title": "Weniger mentale Last. Mehr Überblick.",
+  "index.hero.subtitle": "Für alle, die sich im Alltag oft überfordert fühlen – durch mentale Last, ADHS/Autismus oder Strukturprobleme.",
   "index.hero.features.prefix-with-dots": "Niva ...",
   "index.hero.features.prefix": "Niva",
-  "index.hero.features.reminds-you-to-note-tasks": "hilft dir, Aufgaben im Blick zu behalten – mit sanften Erinnerungen",
-  "index.hero.features.keeps-track-of-your-calendar": "sorgt dafür, dass in deinem Kalender nichts untergeht",
-  "index.hero.features.helps-you-create-small-doable-tasks": "macht aus großen Aufgaben kleine, machbare Schritte",
-  "index.hero.features.uses-your-favorite-messenger": "nutzt deinen Lieblings-Messenger",
-  "index.hero.features.understands-everyday-language": "versteht deine Alltagsroutinen und spricht deine Sprache",
-  "index.hero.start-chat": "Chat starten",
-  "index.features.title": "Funktionen, die dir helfen, dich besser zu organisieren",
+  "index.hero.features.reminds-you-to-note-tasks": "🧚‍♀️ Reduziert deinen Mental Load – mit klaren Erinnerungen",
+  "index.hero.features.keeps-track-of-your-calendar": "🌿 Hilft dir, Alltag & Kalender zu strukturieren",
+  "index.hero.features.helps-you-create-small-doable-tasks": "🪄 Bricht große Aufgaben in kleine Schritte ",
+  "index.hero.features.uses-your-favorite-messenger": "💬 nutzt deinen Lieblings-Messenger",
+  "index.hero.features.understands-everyday-language": "🔮 Spricht deine Sprache & erkennt Muster",
+  "index.hero.start-chat": "Bereit für weniger Überforderung?",
+  "index.features.title": "Weniger mentale Last. Klarer durch den Tag.",
   "index.morning-routine.title": "Starte strukturiert in den Tag",
   "index.morning-routine.teaser": "Deine persönliche Morgenroutine – sanft, vorhersehbar, beruhigend.",
   "index.morning-routine.get-up-to-date-information-weather-appointments": "Erhalte aktuelle Informationen (Wetter, Termine, …)",
@@ -219,7 +219,7 @@
   "blog": {
     "page": {
       "title": "Niva Blog – Sanfte Unterstützung, um dich besser zu organisieren",
-      "description": "Unser Blog bietet Tipps und Tools für neurodivergente Menschen, die sich mehr Struktur wünschen – ohne Druck, aber mit Klarheit und Verständnis."
+      "description": "Unser Blog bietet Tipps und Tools für neurodivergente Menschen, die sich mehr Struktur wünschen – ohne Druck, aber mit Klarheit und Verständnis.",
     },
     "organize-yourself": {
       "title": "Schwierigkeiten bei der Organisation? So findest du wieder Struktur ohne Überforderung",
@@ -248,6 +248,7 @@
     "overview": {
       "title": "Niva Blog – Organisiere dich sanft",
       "description": "Entdecke Geschichten, Strategien und weiche Strukturen für neurodivergente Gehirne. Geschrieben mit Sorgfalt, nicht mit Druck.",
+      "missing-article": "Der Beitrag, den du suchst, ist nicht verfügbar:\n{article}\n\nVersuche es mit einer Suche oder schau in unseren Blog-Archiven nach.",
       "filter-by-tag": "Nach Tag filtern:",
       "all-posts": "Alle Beiträge",
       "loading": "Lädt...",
