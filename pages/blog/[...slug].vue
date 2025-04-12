@@ -1,86 +1,3 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: 'blog'
-})
-
-const { t, locale } = useI18n()
-const localePath = useLocalePath()
-const route = useRoute()
-const router = useRouter()
-
-const doc = ref()
-const pending = ref(true)
-const error = ref(false)
-watchEffect(async () => {
-  try {
-    pending.value = true
-    doc.value = await queryCollection('blog').path(route.path).first()
-    pending.value = false
-    useSeoMeta({
-      title: doc.value.title,
-      ogTitle: doc.value.title,
-      description: doc.value.description,
-      ogDescription: doc.value.description
-    })
-    console.log(doc.value.description);
-    
-  } catch (err) {
-    error.value = true
-    router.push(`/blog?missingarticle=${route.path}`)
-  }
-})
-
-// Fetch all blog posts for related articles
-const allPosts = ref<any[]>([])
-watchEffect(async () => {
-  allPosts.value = await queryCollection('blog').where('path', 'LIKE', `/${locale.value}/%`).order('date', 'DESC').all()
-})
-
-// Get related articles
-const relatedArticles = computed(() => {
-  if (!allPosts.value) return []
-  // Return up to 3 articles
-  return allPosts.value.filter(p => p.id !== doc.value?.id).sort(() => Math.random() - 0.5).slice(0, 3)
-})
-
-// Get all unique tags
-const allTags = computed(() => {
-  if (!allPosts.value) return []
-
-  const tags = new Set<string>()
-  allPosts.value.forEach(post => {
-    if (post.tags) {
-      post.tags.forEach(tag => tags.add(tag))
-    }
-  })
-  return tags
-})
-
-// Format date
-const formatDate = (dateString: string) => {
-  if (!dateString) return ''
-
-  const date = new Date(dateString)
-  return date.toLocaleDateString(locale.value, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
-
-
-const sidebarContainer = useTemplateRef('sidebar-container')
-const { x: sidebarContainerX, y: sidebarContainerY, width: sidebarContainerWidth } = useElementBounding(sidebarContainer)
-
-
-const sidebar = useTemplateRef('sidebar')
-
-watch([sidebarContainerX, sidebarContainerY, sidebarContainerWidth], ([x, y, w]) => {
-  sidebar.value!.$el.style.left = `${x}px`
-  sidebar.value!.$el.style.width = `${w}px`
-  sidebar.value!.$el.style.top = `${window.scrollY + y}px`
-})
-</script>
 <template>
   <Container margin="t-4 b-5">
     <Row>
@@ -91,7 +8,7 @@ watch([sidebarContainerX, sidebarContainerY, sidebarContainerWidth], ([x, y, w])
             <b-span class="back-icon" margin="e-2">←</b-span> {{ t('blog.post.back-to-blog') }}
           </b-button>
         </NuxtLink>
-        <b-div v-if="pending" margin="y-4">
+        <b-div v-if="status === 'pending'" margin="y-4">
           <b-spinner />
         </b-div>
         <b-div v-else-if="doc">
@@ -154,6 +71,94 @@ watch([sidebarContainerX, sidebarContainerY, sidebarContainerWidth], ([x, y, w])
     </Row>
   </Container>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'blog'
+})
+
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
+const route = useRoute()
+
+const { data: doc, status } = useAsyncData('blog-'+route.path, async () => {
+  const doc = await queryCollection('blog').path(route.path).first()
+  return doc
+}, {
+  watch: [route]
+})
+
+onBeforeMount(() => {
+  useHead({
+    title: doc?.value?.title,
+    meta: [
+      {
+        name: 'description',
+        content: doc?.value?.description
+      }
+    ]
+  })
+  useServerSeoMeta({
+    title: doc?.value?.title,
+    ogTitle: doc?.value?.title,
+    description: doc?.value?.description,
+    ogDescription: doc?.value?.description
+  })
+})
+
+// Fetch all blog posts for related articles
+const { data: allPosts } = useAsyncData('all-blog-posts', () => {
+  return queryCollection('blog').where('path', 'LIKE', `/${locale.value}/%`).order('date', 'DESC').all()
+}, {
+  watch: [locale]
+})
+
+// Get related articles
+const relatedArticles = computed(() => {
+  if (!allPosts.value) return []
+  // Return up to 3 articles
+  return allPosts.value.filter(p => p.id !== doc.value?.id).sort(() => Math.random() - 0.5).slice(0, 3)
+})
+
+// Get all unique tags
+const allTags = computed(() => {
+  if (!allPosts.value) return []
+
+  const tags = new Set<string>()
+  allPosts.value.forEach(post => {
+    if (post.tags) {
+      post.tags.forEach(tag => tags.add(tag))
+    }
+  })
+  return tags
+})
+
+// Format date
+const formatDate = (dateString: string) => {
+  if (!dateString) return ''
+
+  const date = new Date(dateString)
+  return date.toLocaleDateString(locale.value, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+
+
+const sidebarContainer = useTemplateRef('sidebar-container')
+const { x: sidebarContainerX, y: sidebarContainerY, width: sidebarContainerWidth } = useElementBounding(sidebarContainer)
+
+
+const sidebar = useTemplateRef('sidebar')
+
+watch([sidebarContainerX, sidebarContainerY, sidebarContainerWidth], ([x, y, w]) => {
+  sidebar.value!.$el.style.left = `${x}px`
+  sidebar.value!.$el.style.width = `${w}px`
+  sidebar.value!.$el.style.top = `${window.scrollY + y}px`
+})
+</script>
+
 <style scoped>
 .meta-info {
   font-size: 0.9rem;

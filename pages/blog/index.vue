@@ -28,7 +28,7 @@
       </b-div>
     </b-div>
 
-    <b-div v-if="pending" margin="y-4">
+    <b-div v-if="status === 'pending'" margin="y-4">
       <b-div v-for="i in 4" :key="i" shadow="sm" padding="3" margin="b-3" rounded
         background-color="info-subtle" placeholder="wave">
         <NuxtLink>
@@ -40,12 +40,12 @@
         </NuxtLink>
       </b-div>
     </b-div>
-    <b-div v-else-if="error" margin="y-4">{{ t('blog.overview.error', { error }) }}</b-div>
+    <b-div v-else-if="status === 'error'" margin="y-4">{{ t('blog.overview.error', { error }) }}</b-div>
     <b-div v-else-if="!filteredPosts || filteredPosts.length === 0">{{ t('blog.overview.no-posts') }}</b-div>
     <b-div v-else>
       <b-div v-for="post in filteredPosts" :key="post.path" shadow="sm" padding="3" margin="b-3" rounded
         background-color="info-subtle">
-        <NuxtLink :to="localePath(post.path)">
+        <NuxtLink :to="post.path">
           <b-h level="2" margin="b-1">{{ post.title }}</b-h>
           <b-p text-color="secondary">{{ post.description }}</b-p>
           <b-div v-if="post.tags && post.tags.length" margin="t-2">
@@ -67,6 +67,12 @@ definePageMeta({
 })
 
 const { locale, t } = useI18n()
+useHead({
+  title: t('blog.page.title'),
+  meta: [
+    { name: 'description', content: t('blog.page.description') }
+  ]
+})
 useSeoMeta({
   title: t('blog.page.title'),
   ogTitle: t('blog.page.title'),
@@ -79,19 +85,12 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 // Get tag from URL query parameter
-const selectedTag = computed(() => route.query.tag)
+const selectedTag = computed<string | null>(() => route.query.tag as string | null)
 
-const posts = ref<any>()
-const pending = ref(true)
-const error = ref(false)
-watchEffect(async () => {
-  try {
-    pending.value = true
-    posts.value = await queryCollection('blog').where('path', 'LIKE', `/${locale.value}/%`).order('date', 'DESC').all()
-    pending.value = false
-  } catch (err) {
-    error.value = true
-  }
+const { data: posts, status } = useAsyncData('blog', async () => {
+  return queryCollection('blog').where('path', 'LIKE', `/${locale.value}/%`).order('date', 'DESC').all()
+}, {
+  watch: [locale]
 })
 
 // Get all unique tags
@@ -117,7 +116,7 @@ const filteredPosts = computed(() => {
   }
 
   return posts.value.filter(post => {
-    if (!post.tags || !Array.isArray(post.tags)) return false
+    if (!post.tags || !Array.isArray(post.tags) || !selectedTag.value) return false
     return post.tags.includes(selectedTag.value)
   })
 })
