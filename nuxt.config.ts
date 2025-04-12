@@ -48,7 +48,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { redirect: '/de' },
-    '/index.html': { redirect: '/de' }
+    '/index.html': { redirect: '/de' },
+    "*/blog/**": { prerender: true },
   },
   i18n: {
     locales: [
