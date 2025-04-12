@@ -14,7 +14,7 @@
                     alt="Logo"
                     ref="logo"
                     sizes="40px"
-                    densities="x1 x2 x3"
+                    densities="x1 x2"
                 />
                 <b-span small margin="x-2">{{ $t('navbar.brand.name') }}</b-span>
             </NavbarBrand>
@@ -63,11 +63,11 @@
                         </NavItemDropdownToggle>
                         <Teleport to="body">
                             <DropdownMenu style="z-index: 2000;">
-                                <DropdownItem>
-                                    <NuxtLink :to="switchLocalePath('de')">Deutsch 🇩🇪</NuxtLink>
+                                <DropdownItem :to="switchLocalePath('de')">
+                                    Deutsch 🇩🇪
                                 </DropdownItem>
-                                <DropdownItem>
-                                    <NuxtLink :to="switchLocalePath('en')">English 🇺🇸</NuxtLink>
+                                <DropdownItem :to="switchLocalePath('en')">
+                                    English 🇺🇸
                                 </DropdownItem>
                             </DropdownMenu>
                         </Teleport>
