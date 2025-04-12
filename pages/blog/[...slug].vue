@@ -22,6 +22,8 @@ watchEffect(async () => {
       description: doc.value.description,
       ogDescription: doc.value.description
     })
+    console.log(doc.value.description);
+    
   } catch (err) {
     error.value = true
     router.push(`/blog?missingarticle=${route.path}`)
