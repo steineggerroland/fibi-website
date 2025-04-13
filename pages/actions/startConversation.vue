@@ -3,7 +3,9 @@
 </template>
 
 <script setup lang="ts">
-onMounted(async () => {
+const router = useRouter()
+const localePath = useLocalePath()
+onBeforeMount(async () => {
   try {
     // Track the action
     await fetch('/api/track/startConversation', {
@@ -16,8 +18,7 @@ onMounted(async () => {
     console.error('Error tracking action:', error)
   }
   
-  // Redirect to contact form
-  navigateTo({ path: '/', hash: '#contact-form', query: { startConversation: 'true' } })
+  router.push({ path: localePath('/'), hash: '#contactForm', query: { startConversation: 'true' } })
 })
 </script>
 

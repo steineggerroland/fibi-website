@@ -4,7 +4,7 @@ description: Struktur darf sich leicht anfühlen. Entdecke fünf Wege, wie du Or
 layout: blog  
 date: 2025-04-03  
 author: Niva Team  
-tags: ['organisation', 'adhs', 'neurodivergenz']
+tags: ['organisation', 'adhs', 'neurodiversität']
 ---
 
 **Organisation klingt groß. Und manchmal auch überwältigend.**  
@@ -51,4 +51,4 @@ Es ist ein Weg, auf dem du ausprobieren darfst, was für **dein** Gehirn funktio
 ---
 
 ✨ **Möchtest du dich auf deine Weise organisieren – ohne Druck?**  
-👉 [Finde deinen Weg – mit Niva](/#contactForm)
+👉 [Finde deinen Weg – mit Niva](/de/actions/joinBeta)

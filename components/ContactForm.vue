@@ -1,11 +1,11 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="contact-form">
+  <form @submit.prevent="handleSubmit">
     <b-p>
       <BFormLabel for="contactEmail">
         {{ $t('contact-form.email-label') }}
       </BFormLabel>
       <BFormInput id="contactEmail" type="email" name="email" :placeholder="$t('contact-form.email-placeholder')+'@example.com'" required size="lg"
-        v-model="contactFormInput.email" />
+        v-model="contactFormInput.email" ref="emailInput" :autofocus="route.hash === '#contactForm'" />
     </b-p>
     <b-p>
       <BFormLabel for="contactMessage">
@@ -43,6 +43,7 @@ const contactFormInput = ref({
 })
 
 useFormTemplates(computed(() => contactFormInput.value.message))
+const emailInput = ref(null)
 
 // Watch for route query changes
 watch(() => route.query, (newQuery) => {
@@ -53,9 +54,8 @@ watch(() => route.query, (newQuery) => {
       contactFormInput.value.message = contactFormInput.value.message 
         ? `${contactFormInput.value.message}\n\n${template}`
         : template
+      emailInput.value?.$el?.focus()
     }
-    // Remove the query parameter
-    router.replace({ path: route.path, hash: route.hash })
   } else if (newQuery.joinBeta === 'true') {
     // Append the template if it's not already in the message
     const template = t('contact-form.join-beta-template')
@@ -63,11 +63,16 @@ watch(() => route.query, (newQuery) => {
       contactFormInput.value.message = contactFormInput.value.message 
         ? `${contactFormInput.value.message}\n\n${template}`
         : template
+      emailInput.value?.$el?.focus()
     }
-    // Remove the query parameter
-    router.replace({ path: route.path, hash: route.hash })
   }
 }, { immediate: true })
+
+onMounted(() => {
+  if (route.hash === '#contactForm') {
+    emailInput.value?.$el?.focus()
+  }
+})
 
 const handleSubmit = async () => {
   try {

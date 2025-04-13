@@ -53,4 +53,4 @@ Und Sichtbarkeit ist der erste Schritt zu echter Verbundenheit.
 
 ✨ Wie auch immer dein Gehirn funktioniert – du verdienst es, gesehen zu werden.
 
-👉 [Finde deinen Weg mit Niva](/#contactForm)
+👉 [Finde deinen Weg mit Niva](/de/actions/joinBeta)

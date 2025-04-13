@@ -51,4 +51,4 @@ All das ist okay.
 ---
 
 📦 **Bereit, dein sanftes Organisationssystem zu finden?**  
-👉 [Finde deinen Flow – mit Niva](/#contactForm)
+👉 [Finde deinen Flow – mit Niva](/de/actions/joinBeta)

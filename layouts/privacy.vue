@@ -28,7 +28,7 @@
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink :to="localePath('/#about')">
+                        <NavLink :to="localePath('/about')">
                             {{ $t('navbar.link.about') }}
                         </NavLink>
                     </NavItem>
@@ -38,12 +38,8 @@
                         <NavItemDropdownToggle style="cursor: pointer;"><span toggle="tooltip"
                                 :title="$t('navbar.language')">🌐</span></NavItemDropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem>
-                                <NuxtLink :to="switchLocalePath('de')">Deutsch 🇩🇪</NuxtLink>
-                            </DropdownItem>
-                            <DropdownItem>
-                                <NuxtLink :to="switchLocalePath('en')">English 🇺🇸</NuxtLink>
-                            </DropdownItem>
+                            <DropdownItem :to="switchLocalePath('de')">Deutsch 🇩🇪</DropdownItem>
+                            <DropdownItem :to="switchLocalePath('en')">English 🇺🇸</DropdownItem>
                         </DropdownMenu>
                     </NavItemDropdown>
           <NavItem>

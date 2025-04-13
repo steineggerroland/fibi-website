@@ -39,4 +39,4 @@ Sie ist nicht dafür da, dich zu steuern – sondern, dir Halt zu geben.
 ---
 
 📅 **Wenn du magst, plant Niva deine erste kleine Routine mit dir zusammen:**  
-👉 [Sanft starten – mit Niva](/#contactForm)
+👉 [Sanft starten – mit Niva](/de/actions/joinBeta)

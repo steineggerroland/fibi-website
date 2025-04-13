@@ -2,9 +2,6 @@
 import { useI18n } from 'vue-i18n'
 import { useLocalePath } from '#i18n'
 import { definePageMeta } from '#imports'
-import { useNuxtApp } from '#app'
-import { computed } from 'vue'
-import { useImage } from '#imports'
 
 definePageMeta({
     layout: 'landing'
@@ -27,17 +24,6 @@ const scrollToContactForm = () => {
         }
     }, 100)
 }
-
-// Get the optimized image URL
-const { getImage } = useImage()
-const optimizedNivaImage = computed(() => {
-    return getImage('/niva.png', {
-        width: 64,
-        height: 64,
-        format: 'webp',
-        quality: 80
-    }).url
-})
 
 useSeoMeta({
     title: t('index.page.title'),

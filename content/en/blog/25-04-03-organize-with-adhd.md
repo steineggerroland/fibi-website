@@ -51,4 +51,4 @@ It’s a path you shape around your needs – one that actually fits your brain.
 ---
 
 ✨ **Want to explore structure that feels good – not forced?**  
-👉 [Find your rhythm – with Niva](/#contactForm)
+👉 [Find your rhythm – with Niva](/en/actions/joinBeta)

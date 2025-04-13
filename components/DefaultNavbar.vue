@@ -22,27 +22,27 @@
             <NavbarCollapse id="navbar-collapse" ref="navbarCollapse">
                 <NavbarNavList margin="s-auto" text-alignment="center">
                     <NavItem>
-                        <NavLink :to="localePath('/#features')">
+                        <NavLink :to="localePath('/#features')" :active="route.hash === '#features'">
                             {{ $t('navbar.link.features') }}
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink :to="localePath('/#earlyAccess')">
+                        <NavLink :to="localePath('/#earlyAccess')" :active="route.hash === '#earlyAccess'">
                             {{ $t('navbar.link.early-access') }}
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink :to="localePath('/blog')">
+                        <NavLink :to="localePath('/blog')" :active="route.path.startsWith('/de/blog') || route.path.startsWith('/en/blog')">
                             {{ $t('navbar.link.blog') }}
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink :to="localePath('/#contactForm')">
+                        <NavLink :to="localePath('/#contactForm')" :active="route.hash === '#contactForm'">
                             {{ $t('navbar.link.contact') }}
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink :to="localePath('/#about')">
+                        <NavLink :to="localePath('/about')">
                             {{ $t('navbar.link.about') }}
                         </NavLink>
                     </NavItem>
@@ -96,6 +96,7 @@
 
 <script lang="ts" setup>
 const { t } = useI18n()
+const route = useRoute()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
 const privacyAcceptance = ref<{ hide: () => void; show: () => void } | null>(null)

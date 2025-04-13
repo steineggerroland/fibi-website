@@ -54,4 +54,4 @@ That’s all valid.
 ---
 
 📦 **Ready to create an organization system that’s truly yours?**  
-👉 [Find your gentle flow – with Niva](/#contactForm)
+👉 [Find your gentle flow – with Niva](/en/actions/joinBeta)

@@ -40,6 +40,8 @@ export default defineNuxtConfig({
   sitemap: {
     exclude: [
       '/__nuxt_content/blog/sql_dump',
+      '/__nuxt_content/pages/sql_dump',
+      '/blog',
       '/de/actions/startConversation',
       '/de/actions/joinBeta',
       '/en/actions/startConversation',

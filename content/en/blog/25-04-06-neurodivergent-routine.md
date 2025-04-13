@@ -40,4 +40,4 @@ It’s not meant to steer you – it’s here to **support you**.
 ---
 
 📅 **Want help getting started? Niva will plan your first tiny routine with you:**  
-👉 [Start gently – with Niva](/#contactForm)
+👉 [Start gently – with Niva](/en/actions/joinBeta)

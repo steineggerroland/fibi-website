@@ -3,6 +3,20 @@ import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 export default defineContentConfig({
     collections: {
+        pages: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: {
+                    include: '*/**.md',
+                    exclude: ['*/blog/**']
+                },
+                schema: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                    author: z.string()
+                }),
+            })
+        ),
         blog: defineCollection(
             // adds the robots frontmatter key to the collection
             asSitemapCollection({
